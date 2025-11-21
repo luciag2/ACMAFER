@@ -1,0 +1,109 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\hp\\desktop\\git proyecto\\appacmafer\\appacmafer\\vista\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\productos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\appacmafer\\vista\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\masterpage.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\appacmafer\\vista\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\productos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\appacmafer\\vista\\compras.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\compras.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\appacmafer\\vista\\compras.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\compras.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MasterPage.Master",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\MasterPage.Master",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\MasterPage.Master",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\MasterPage.Master",
+              "RelativeToolTip": "AppAcmafer\\Vista\\MasterPage.Master",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-20T15:54:16.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Compras.aspx",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Compras.aspx",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\Compras.aspx",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Compras.aspx",
+              "RelativeToolTip": "AppAcmafer\\Vista\\Compras.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-20T14:11:54.528Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Compras.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Compras.aspx.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\Compras.aspx.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Compras.aspx.cs",
+              "RelativeToolTip": "AppAcmafer\\Vista\\Compras.aspx.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T14:11:15.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Productos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Productos.aspx.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\Productos.aspx.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Productos.aspx.cs",
+              "RelativeToolTip": "AppAcmafer\\Vista\\Productos.aspx.cs",
+              "ViewState": "AgIAAH4AAAAAAAAAAAAcwIsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-20T12:57:32.139Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Productos.aspx",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Productos.aspx",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\Productos.aspx",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\git Proyecto\\AppAcmafer\\AppAcmafer\\Vista\\Productos.aspx",
+              "RelativeToolTip": "AppAcmafer\\Vista\\Productos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-20T12:57:20.257Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
