@@ -23,6 +23,7 @@ namespace AppAcmafer.Vista
 
             if (!IsPostBack)
             {
+                CargarProductosEnVenta();
                 CargarCategorias();
                 CargarProductos(0); // 0 = Mostrar Todos
             }
@@ -62,14 +63,13 @@ namespace AppAcmafer.Vista
             // 3. Quitamos las referencias a T1 que no existen.
 
             string consultaSQL = $@"
-            SELECT 
-                p.idProducto, 
-                p.Nombre AS nombre, 
-                c.Nombre AS CategoriaNombre, 
-                p.PrecioUnitario AS precioUnitario, 
-                p.StockActual AS stockActual 
-            FROM dbo.producto p
-            INNER JOIN dbo.categoria c ON p.idCategoria = c.idCategoria
+            SELECT
+                    p.idProducto, p.nombre, c.nombre AS CategoriaNombre, 
+                    p.precioUnitario, p.stockActual
+                FROM 
+                    dbo.producto p
+                INNER JOIN 
+                    dbo.categoria c ON p.idCategoria = c.idCategoria"";
             "; // No se usa WHERE ni ORDER BY aún.
 
             if (idCategoriaSeleccionada > 0)
@@ -112,6 +112,80 @@ namespace AppAcmafer.Vista
         {
             int idSeleccionado = Convert.ToInt32(ddlCategoria.SelectedValue);
             CargarProductos(idSeleccionado);
+        }
+
+        // --- NUEVA FUNCIÓN PARA OBTENER SOLO PRODUCTOS EN VENTA ---
+        public void CargarProductosEnVenta()
+        {
+            ClConexion miConexion = new ClConexion();
+
+            string consultaSQL = @"
+        SELECT
+            p.idProducto, p.nombre, c.nombre AS Categoria, p.precioUnitario, p.stockActual
+        FROM 
+            dbo.producto p
+        INNER JOIN 
+            dbo.categoria c ON p.idCategoria = c.idCategoria
+        WHERE 
+            p.estado = 'Disponible'
+            AND CAST(p.stockActual AS INT) > 0
+        ORDER BY 
+            p.nombre;";
+
+            try
+            {
+                System.Data.DataTable tablaProductosEnVenta = miConexion.ObtenerTabla(consultaSQL);
+
+                rptProductos.DataSource = tablaProductosEnVenta;
+                rptProductos.DataBind();
+
+                if (tablaProductosEnVenta.Rows.Count == 0)
+                {
+                    lblMensaje.Text = "No se encontraron productos disponibles para la venta.";
+                }
+                else
+                {
+                    lblMensaje.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al cargar productos en venta: " + ex.Message;
+            }
+        }
+
+        protected void rptProductos_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "Comprar")
+            {
+                if (int.TryParse(e.CommandArgument.ToString(), out int idProductoSeleccionado))
+                {
+                    try
+                    {
+                        Response.Redirect($"Compras.aspx?idProducto={idProductoSeleccionado}");
+                    }
+                    catch (Exception ex)
+                    {
+                        lblMensaje.Text = "Error al iniciar el proceso de compra: " + ex.Message;
+                    }
+                }
+                else
+                {
+                    lblMensaje.Text = "Error: No se pudo identificar el producto seleccionado.";
+                }
+            }
+        }
+
+
+
+        protected void btnComprar_Click(object sender, CommandEventArgs e)
+        {
+            string idProducto = e.CommandArgument.ToString();
+
+            lblMensaje.ForeColor = System.Drawing.Color.Green;
+            lblMensaje.Text = $"Producto #{idProducto} agregado al carrito. Redirigiendo a Compras...";
+
+            Response.Redirect($"Compras.aspx?idProducto={idProducto}", true);
         }
     }
 }

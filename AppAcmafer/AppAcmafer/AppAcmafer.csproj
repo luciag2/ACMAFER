@@ -109,6 +109,7 @@
     <Compile Include="Logica\ClUsuarioL.cs" />
     <Compile Include="Logica\MenuLogica.cs" />
     <Compile Include="Logica\NavegacionLogica.cs" />
+    <Compile Include="Logica\ProductoVent.cs" />
     <Compile Include="Modelo\AsignacionTarea.cs" />
     <Compile Include="Modelo\ClCategoriaM.cs" />
     <Compile Include="Modelo\ClProductoM.cs" />

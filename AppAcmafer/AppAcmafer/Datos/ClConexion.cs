@@ -11,7 +11,7 @@ namespace AppAcmafer.Datos
     public class ClConexion
     {
 
-        SqlConnection oConex;
+        public SqlConnection oConex;
 
         public ClConexion()
         {

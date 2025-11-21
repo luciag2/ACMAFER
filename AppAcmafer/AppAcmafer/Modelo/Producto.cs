@@ -15,7 +15,7 @@ namespace AppAcmafer.Modelo
         public int StockActual { get; set; }
         public string Estado { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public int IdCategoria { get; set; }
+        public int idCategoria { get; set; }
 
         // Propiedad adicional
         public string NombreCategoria { get; set; }
