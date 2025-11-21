@@ -1,0 +1,24 @@
+# Archivos de la solución y del IDE
+*.suo             # Archivos de opciones de usuario de la solución
+*.user            # Archivos de opciones de usuario del proyecto
+*.log             # Archivos de registro
+
+# Carpetas de compilación
+[Bb]in/           # Carpetas de binarios de compilación (ejecutables, DLLs)
+[Oo]bj/           # Carpetas de objetos de compilación intermedia
+
+# Paquetes NuGet
+packages/         # Carpeta de paquetes NuGet (si no usas PackageReference/restore)
+
+# Archivos de Visual Studio Code (si usas VS Code para editar)
+.vscode/
+
+# Ejecutables
+*.exe
+*.dll
+*.pdb             # Archivos de símbolos de depuración
+*.ilk
+*.idb
+
+# Archivos de caché
+.vs/              # Carpeta oculta de Visual Studio (contiene caché y archivos de usuario)
