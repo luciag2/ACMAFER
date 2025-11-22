@@ -94,10 +94,19 @@
     <Content Include="Vista\ListadoProductos.aspx" />
     <Content Include="Vista\ListarUsuarios.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\MenuRoles.aspx" />
     <Content Include="Vista\Productos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\CD_AsgnacionTarea.cs" />
+    <Compile Include="Datos\CD_Categoria.cs" />
+    <Compile Include="Datos\CD_Compra.cs" />
+    <Compile Include="Datos\CD_Pedido.cs" />
+    <Compile Include="Datos\CD_Producto.cs" />
+    <Compile Include="Datos\CD_Rol.cs" />
+    <Compile Include="Datos\CD_Tarea.cs" />
+    <Compile Include="Datos\CD_Usuario.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClProducto.cs" />
     <Compile Include="Datos\ClProductoD.cs" />
@@ -105,15 +114,24 @@
     <Compile Include="Datos\CompraDAO.cs" />
     <Compile Include="Datos\ConexionBD.cs" />
     <Compile Include="Datos\ProductoDAO.cs" />
+    <Compile Include="Datos\RolDAO.cs" />
     <Compile Include="Datos\TareaDAO.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
+    <Compile Include="Logica\Cl_Pedido.cs" />
+    <Compile Include="Logica\Cl_Producto.cs" />
+    <Compile Include="Logica\Cl_Rol.cs" />
+    <Compile Include="Logica\Cl_Tarea.cs" />
+    <Compile Include="Logica\Cl_Usuario.cs" />
     <Compile Include="Logica\MenuLogica.cs" />
     <Compile Include="Logica\NavegacionLogica.cs" />
     <Compile Include="Modelo\AsignacionTarea.cs" />
+    <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\ClCategoriaM.cs" />
     <Compile Include="Modelo\ClProductoM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
+    <Compile Include="Modelo\ComentarioTarea.cs" />
     <Compile Include="Modelo\Compra.cs" />
+    <Compile Include="Modelo\EvidenciaTarea.cs" />
     <Compile Include="Modelo\Pedido.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Rol.cs" />
@@ -159,6 +177,13 @@
     <Compile Include="Vista\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuRoles.aspx.cs">
+      <DependentUpon>MenuRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuRoles.aspx.designer.cs">
+      <DependentUpon>MenuRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>

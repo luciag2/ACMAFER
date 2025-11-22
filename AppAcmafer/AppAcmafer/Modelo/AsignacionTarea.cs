@@ -18,9 +18,26 @@ namespace AppAcmafer.Modelo
         public string HoraFin { get; set; }
         public string ComentarioAdmin { get; set; }
 
-        // Propiedades adicionales para mostrar
-        public string TituloTarea { get; set; }
-        public string NombreEmpleado { get; set; }
-        public string NombreAdmin { get; set; }
+        // Navegación
+        public Tarea Tarea { get; set; }
+        public Usuario Empleado { get; set; }
+        public Usuario Admin { get; set; }
+
+        // Constructor
+        public AsignacionTarea()
+        {
+            IdAsignacionTarea = 0;
+            IdTarea = 0;
+            IdEmpleado = 0;
+            IdAdmin = 0;
+            FechaInicio = DateTime.Now;
+            HoraInicio = string.Empty;
+            FechaFin = DateTime.Now;
+            HoraFin = string.Empty;
+            ComentarioAdmin = string.Empty;
+            Tarea = null;
+            Empleado = null;
+            Admin = null;
+        }
     }
 }

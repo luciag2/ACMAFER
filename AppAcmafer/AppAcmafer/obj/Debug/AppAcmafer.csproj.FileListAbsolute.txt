@@ -175,3 +175,7 @@ C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.cspr
 C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
 C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
 C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
+C:\Users\gonsa\Documents\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
+C:\Users\gonsa\Documents\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
+C:\Users\gonsa\Documents\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
+C:\Users\gonsa\Documents\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb

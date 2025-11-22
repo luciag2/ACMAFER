@@ -19,5 +19,22 @@ namespace AppAcmafer.Modelo
 
         // Propiedad adicional para mostrar nombre completo
         public string NombreCompleto => $"{Nombre} {Apellido}";
+
+        public Rol Rol { get; set; }
+
+        // Constructor
+        public Usuario()
+        {
+            IdUsuario = 0;
+            Documento = string.Empty;
+            Nombre = string.Empty;
+            Apellido = string.Empty;
+            Email = string.Empty;
+            Celular = string.Empty;
+            Clave = string.Empty;
+            Estado = "Activo";
+            IdRol = 0;
+            Rol = null;
+        }
     }
 }
