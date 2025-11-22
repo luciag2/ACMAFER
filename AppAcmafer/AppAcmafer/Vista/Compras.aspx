@@ -37,9 +37,9 @@
             <asp:Label ID="lblFiltro" runat="server" Text="Filtrar por Producto:" Font-Bold="true" style="margin-right: 10px;"></asp:Label>
             <asp:TextBox ID="txtFiltro" runat="server" placeholder="Buscar producto..." style="padding: 8px; width: 250px; border: 1px solid #bdc3c7; border-radius: 5px;"></asp:TextBox>
             <asp:Button ID="btnBuscar" runat="server" Text="🔍 Buscar" OnClick="btnBuscar_Click" 
-                style="padding: 8px 20px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;" />
+                style="padding: 8px 20px; background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;" />
             <asp:Button ID="btnMostrarTodas" runat="server" Text="📋 Mostrar Todas" OnClick="btnMostrarTodas_Click" 
-                style="padding: 8px 20px; background: #95a5a6; color: white; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;" />
+                style="padding: 8px 20px; background: linear-gradient(135deg, #8b0000 0%, #ff0000 25%, #b30000 50%, #ff4d4d 75%, #660000 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer; margin-left: 10px;" />
         </div>
         
         <!-- GridView de Compras -->
@@ -65,7 +65,7 @@
                 
                 <asp:TemplateField HeaderText="Total Final">
                     <ItemTemplate>
-                        <strong style="color: #27ae60;">
+                        <strong style="color: #000000;">
                             <%# string.Format("{0:N0}", Convert.ToDecimal(Eval("ValorTotal")) - Convert.ToDecimal(Eval("Descuento"))) %>
                         </strong>
                     </ItemTemplate>
@@ -77,14 +77,14 @@
                                    Text="👁️ Ver" 
                                    CommandArgument='<%# Eval("IdCompra") %>' 
                                    OnClick="btnVerDetalle_Click"
-                                   style="padding: 5px 15px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;" />
+                                   style="padding: 5px 15px; background: #1f2937; color: white; border: none; border-radius: 5px; cursor: pointer;" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
         </asp:GridView>
         
         <!-- Resumen estadístico -->
-        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; color: white;">
+        <div style="margin-top: 30px; padding: 20px; background: linear-gradient(135deg, #000000 0%, #777777 50%, #ff0000 100%); border-radius: 10px; color: white;">
             <h3 style="margin-bottom: 15px;">📊 Resumen</h3>
             <div style="display: flex; justify-content: space-around; text-align: center;">
                 <div>

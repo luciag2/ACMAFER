@@ -52,6 +52,8 @@ namespace AppAcmafer.Datos
 
             return productos;
         }
+
+
     }
 
     public class ProductoDAL

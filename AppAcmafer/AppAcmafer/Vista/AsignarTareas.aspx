@@ -27,9 +27,9 @@
                 </div>
                 
                 <asp:Button ID="btnFiltrar" runat="server" Text="🔍 Filtrar" OnClick="btnFiltrar_Click" 
-                    style="padding: 8px 20px; background: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer;" />
+                    style="padding: 8px 20px; background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer;" />
                 <asp:Button ID="btnLimpiar" runat="server" Text="🔄 Limpiar" OnClick="btnLimpiar_Click" 
-                    style="padding: 8px 20px; background: #95a5a6; color: white; border: none; border-radius: 5px; cursor: pointer;" />
+                    style="padding: 8px 20px; background: linear-gradient(135deg, #8b0000 0%, #ff0000 25%, #b30000 50%, #ff4d4d 75%, #660000 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer;" />
             </div>
         </div>
         
@@ -42,8 +42,8 @@
                       BackColor="White"
                       EmptyDataText="No hay tareas asignadas">
             
-            <HeaderStyle BackColor="#e74c3c" ForeColor="White" Font-Bold="true" Height="45px" />
-            <RowStyle BackColor="#fadbd8" Height="40px" />
+            <HeaderStyle BackColor="#2c3e50" ForeColor="White" Font-Bold="true" Height="45px" />
+            <RowStyle BackColor="#d1d5db" Height="40px" />
             <AlternatingRowStyle BackColor="White" />
             
             <Columns>
@@ -72,7 +72,7 @@
                 
                 <asp:TemplateField HeaderText="Estado">
                     <ItemTemplate>
-                        <span style="padding: 5px 10px; border-radius: 15px; background: #27ae60; color: white; font-size: 12px;">
+                        <span style="padding: 5px 10px; border-radius: 15px; background: linear-gradient(90deg, #2c2c2c, #555555, #b5b5b5, #7a7a7a, #d6d6d6, #5f5f5f, #2c2c2c); color: #000000; font-size: 12px;">
                             <%# EvaluarEstado((DateTime)Eval("FechaFin")) %>
                         </span>
                     </ItemTemplate>
@@ -85,12 +85,12 @@
                                    CommandArgument='<%# Eval("IdAsignacionTarea") %>' 
                                    OnClick="btnVerComentario_Click"
                                    ToolTip='<%# Eval("ComentarioAdmin") %>'
-                                   style="padding: 5px 15px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px;" />
+                                   style="padding: 5px 15px; background: linear-gradient(90deg, #0a1a2f 0%, #0f355c 20%, #1a4d85 35%, #68a4ff 50%, #1a4d85 65%, #0f355c 80%, #0a1a2f 100%); color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px;" />
                         <asp:Button ID="btnEditar" runat="server" 
                                    Text="✏️ Editar" 
                                    CommandArgument='<%# Eval("IdAsignacionTarea") %>' 
                                    OnClick="btnEditar_Click"
-                                   style="padding: 5px 15px; background: #f39c12; color: white; border: none; border-radius: 5px; cursor: pointer;" />
+                                   style="padding: 5px 15px; background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer;" />
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -107,28 +107,28 @@
         
         <!-- Estadísticas -->
         <div style="margin-top: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; border-radius: 10px; color: white; text-align: center;">
+            <div style="background: linear-gradient(90deg, #2c2c2c, #555555, #b5b5b5, #7a7a7a, #d6d6d6, #5f5f5f, #2c2c2c); padding: 20px; border-radius: 10px; color: #1f1f1f; text-align: center;">
                 <div style="font-size: 14px; opacity: 0.9;">Total Asignaciones</div>
                 <div style="font-size: 32px; font-weight: bold; margin-top: 10px;">
                     <asp:Label ID="lblTotalAsignaciones" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 20px; border-radius: 10px; color: white; text-align: center;">
+            <div style="background: linear-gradient(90deg, #0a1a2f 0%, #0f355c 20%, #1a4d85 35%, #68a4ff 50%, #1a4d85 65%, #0f355c 80%, #0a1a2f 100%); padding: 20px; border-radius: 10px; color: #1f1f1f; text-align: center;">
                 <div style="font-size: 14px; opacity: 0.9;">En Progreso</div>
                 <div style="font-size: 32px; font-weight: bold; margin-top: 10px;">
                     <asp:Label ID="lblEnProgreso" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 20px; border-radius: 10px; color: white; text-align: center;">
+            <div style="background: linear-gradient(135deg, #0a1f0a 0%, #1f7a1f 25%, #b6ffb6 50%, #1f7a1f 75%, #0a1f0a 100%); padding: 20px; border-radius: 10px; color: #1f1f1f; text-align: center;">
                 <div style="font-size: 14px; opacity: 0.9;">Completadas</div>
                 <div style="font-size: 32px; font-weight: bold; margin-top: 10px;">
                     <asp:Label ID="lblCompletadas" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 20px; border-radius: 10px; color: white; text-align: center;">
+            <div style="background: linear-gradient(135deg, #8b0000 0%, #ff0000 25%, #b30000 50%, #ff4d4d 75%, #660000 100%); padding: 20px; border-radius: 10px; color: #1f1f1f; text-align: center;">
                 <div style="font-size: 14px; opacity: 0.9;">Vencidas</div>
                 <div style="font-size: 32px; font-weight: bold; margin-top: 10px;">
                     <asp:Label ID="lblVencidas" runat="server" Text="0"></asp:Label>

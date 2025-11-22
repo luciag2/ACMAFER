@@ -14,7 +14,7 @@
         </p>
         
         
-        <div style="margin-bottom: 25px; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px;">
+        <div style="margin-bottom: 25px; padding: 20px; background: linear-gradient(135deg, #000000 0%, #bfbfbf 100%); border-radius: 8px;">
             <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
                 <div>
                     <asp:Label ID="lblFiltroCategoria" runat="server" Text="Categoría:" Font-Bold="true" ForeColor="White"></asp:Label>
@@ -30,10 +30,10 @@
                 </div>
                 
                 <asp:Button ID="btnBuscar" runat="server" Text="🔍 Buscar" OnClick="btnBuscar_Click" 
-                    style="padding: 8px 25px; background: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
+                    style="padding: 8px 25px; background:  linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
                 
                 <asp:Button ID="btnLimpiar" runat="server" Text="🔄 Limpiar" OnClick="btnLimpiar_Click" 
-                    style="padding: 8px 25px; background: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
+                    style="padding: 8px 25px; background: linear-gradient(135deg, #8b0000 0%, #ff0000 25%, #b30000 50%, #ff4d4d 75%, #660000 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
             </div>
         </div>
         
@@ -47,7 +47,7 @@
                       EmptyDataText="No hay productos disponibles en este momento"
                       OnRowCommand="gvProductos_RowCommand">
             
-            <HeaderStyle BackColor="#3498db" ForeColor="White" Font-Bold="true" Height="50px" Font-Size="14px" />
+            <HeaderStyle BackColor="#4b4d4e" ForeColor="White" Font-Bold="true" Height="50px" Font-Size="14px" />
             <RowStyle BackColor="#ecf0f1" Height="45px" />
             <AlternatingRowStyle BackColor="White" />
             <EmptyDataRowStyle BackColor="#ffe6e6" ForeColor="#c0392b" Font-Bold="true" HorizontalAlign="Center" />
@@ -69,9 +69,9 @@
                 </asp:TemplateField>
                 
                 
-                <asp:TemplateField HeaderText="Categoría">
+                <asp:TemplateField HeaderText="Categoria" HeaderStyle-Width="180px" ItemStyle-Width="180px">
                     <ItemTemplate>
-                        <span style="background: #3498db; color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                        <span style="background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
                             <%# Eval("NombreCategoria") %>
                         </span>
                     </ItemTemplate>
@@ -80,18 +80,18 @@
                 
                 <asp:TemplateField HeaderText="Precio Unitario">
                     <ItemTemplate>
-                        <div style="font-size: 16px; font-weight: bold; color: #27ae60;">
+                        <div style="font-size: 16px; font-weight: bold; color: #000;">
                             <%# string.Format("{0:N0}", Eval("PrecioUnitario")) %>
                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
                 
                 
-                <asp:TemplateField HeaderText="Stock">
+                <asp:TemplateField HeaderText="Stock" HeaderStyle-Width="180px" ItemStyle-Width="180px">
                     <ItemTemplate>
                         <div style="text-align: center;">
-                            <span style="background: <%# Convert.ToInt32(Eval("StockActual")) > 50 ? "#27ae60" : (Convert.ToInt32(Eval("StockActual")) > 20 ? "#f39c12" : "#e74c3c") %>; 
-                                         color: white; padding: 8px 15px; border-radius: 20px; font-weight: bold; font-size: 14px;">
+                            <span style="background: <%# Convert.ToInt32(Eval("StockActual")) > 50 ? "#1f2937" : (Convert.ToInt32(Eval("StockActual")) > 20 ? "#f39c12" : "#e74c3c") %>; 
+                                         color: white; padding: 4px 10px; border-radius: 10px; font-weight: bold; font-size: 14px;">
                                 <%# Eval("StockActual") %> unidades
                             </span>
                         </div>
@@ -99,11 +99,14 @@
                 </asp:TemplateField>
                 
                 
-                <asp:TemplateField HeaderText="Estado">
+                <asp:TemplateField HeaderText="Estado" HeaderStyle-Width="150px" ItemStyle-Width="150px">
                     <ItemTemplate>
-                        <span style="background: #2ecc71; color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
+                        <div style="text-align: center;">
+                           <span style="background: #1f2937; color: white; padding: 5px 12px; border-radius: 15px; font-size: 12px; font-weight: bold;">
                             ✓ <%# Eval("Estado") %>
-                        </span>
+                           </span>
+                        </div>
+
                     </ItemTemplate>
                 </asp:TemplateField>
                 
@@ -111,17 +114,19 @@
                 
                 <asp:TemplateField HeaderText="Acciones">
                     <ItemTemplate>
-                        <asp:Button ID="btnVerDetalle" runat="server" 
+                        <div style="text-align: center;">
+                            <asp:Button ID="btnVerDetalle" runat="server" 
                                    Text="👁️ Ver Detalle" 
                                    CommandName="VerDetalle"
                                    CommandArgument='<%# Eval("IdProducto") %>' 
-                                   style="padding: 8px 15px; background: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px; font-weight: bold;" />
+                                   style="padding: 4px 10px; background: #1f2937; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px; font-weight: bold;" />
                         
-                        <asp:Button ID="btnAgregar" runat="server" 
+                           <asp:Button ID="btnAgregar" runat="server" 
                                    Text="🛒 Comprar" 
                                    CommandName="Comprar"
                                    CommandArgument='<%# Eval("IdProducto") %>' 
-                                   style="padding: 8px 15px; background: #27ae60; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
+                                   style="padding: 4px 10px; background: linear-gradient(135deg, #b8860b 0%, #d4af37 50%, #ffd700 100%); color: #1f1f1f; border: none; border-radius: 5px; cursor: pointer; font-weight: bold;" />
+                         </div>
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
@@ -173,28 +178,28 @@
         
         <div style="margin-top: 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
             
-            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(135deg, #000000 0%, #777777 50%, #d4af37 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <div style="font-size: 14px; opacity: 0.9; margin-bottom: 10px;">Total Productos</div>
                 <div style="font-size: 36px; font-weight: bold;">
                     <asp:Label ID="lblTotalProductos" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(135deg, #000000 0%, #777777 50%, #d4af37 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <div style="font-size: 14px; opacity: 0.9; margin-bottom: 10px;">Categorías</div>
                 <div style="font-size: 36px; font-weight: bold;">
                     <asp:Label ID="lblTotalCategorias" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(135deg, #000000 0%, #777777 50%, #d4af37 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <div style="font-size: 14px; opacity: 0.9; margin-bottom: 10px;">Stock Total</div>
                 <div style="font-size: 36px; font-weight: bold;">
                     <asp:Label ID="lblStockTotal" runat="server" Text="0"></asp:Label>
                 </div>
             </div>
             
-            <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div style="background: linear-gradient(135deg, #000000 0%, #777777 50%, #d4af37 100%); padding: 25px; border-radius: 10px; color: white; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
                 <div style="font-size: 14px; opacity: 0.9; margin-bottom: 10px;">Valor Inventario</div>
                 <div style="font-size: 36px; font-weight: bold;">
                     <asp:Label ID="lblValorTotal" runat="server" Text="$0"></asp:Label>
