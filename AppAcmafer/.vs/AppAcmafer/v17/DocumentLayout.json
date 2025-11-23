@@ -1,5 +1,6 @@
 {
   "Version": 1,
+<<<<<<< HEAD
   "WorkspaceRootPath": "C:\\Users\\gonsa\\Documents\\AppAcmafer\\AppAcmafer\\",
   "Documents": [
     {
@@ -201,6 +202,21 @@
     {
       "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\gonsa\\Documents\\AppAcmafer\\AppAcmafer\\appacmafer\\vista\\compras.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\compras.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+=======
+  "WorkspaceRootPath": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\hp\\desktop\\acmafer\\appacmafer\\appacmafer\\datos\\productodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\datos\\productodao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\hp\\desktop\\acmafer\\appacmafer\\appacmafer\\datos\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\datos\\conexionbd.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\hp\\desktop\\acmafer\\appacmafer\\appacmafer\\datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\datos\\clconexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> a3f6c49d14a1d84841131c5446f1419427123e1f
     }
   ],
   "DocumentGroupContainers": [
@@ -210,7 +226,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -279,6 +295,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 1,
               "Title": "CambiarContrase\u00F1a.aspx",
               "DocumentMoniker": "C:\\Users\\gonsa\\Documents\\AppAcmafer\\AppAcmafer\\AppAcmafer\\Vista\\CambiarContrase\u00F1a.aspx",
@@ -847,10 +864,22 @@
               "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
               "WhenOpened": "2025-11-20T15:54:16.913Z",
+=======
+              "DocumentIndex": 2,
+              "Title": "ClConexion.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ClConexion.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\ClConexion.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ClConexion.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\ClConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:51:16.404Z",
+>>>>>>> a3f6c49d14a1d84841131c5446f1419427123e1f
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 49,
               "Title": "Compras.aspx.cs",
               "DocumentMoniker": "C:\\Users\\gonsa\\Documents\\AppAcmafer\\AppAcmafer\\AppAcmafer\\Vista\\Compras.aspx.cs",
@@ -860,6 +889,30 @@
               "ViewState": "AgIAAAsAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-20T14:11:15.319Z",
+=======
+              "DocumentIndex": 1,
+              "Title": "ConexionBD.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ConexionBD.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\ConexionBD.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ConexionBD.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\ConexionBD.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwBYAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:49:52.466Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductoDAO.cs",
+              "DocumentMoniker": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ProductoDAO.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\ProductoDAO.cs",
+              "ToolTip": "C:\\Users\\HP\\Desktop\\ACMAFER\\AppAcmafer\\AppAcmafer\\Datos\\ProductoDAO.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\ProductoDAO.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAADcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T19:44:30.749Z",
+>>>>>>> a3f6c49d14a1d84841131c5446f1419427123e1f
               "EditorCaption": ""
             }
           ]
