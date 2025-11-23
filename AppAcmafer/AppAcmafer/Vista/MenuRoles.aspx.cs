@@ -1,190 +1,169 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;  // ← AGREGAR ESTA LÍNEA
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using AppAcmafer.Datos;
-using AppAcmafer.Modelo;
+
+
 
 namespace AppAcmafer.Vista
 {
+    // ** ESTA CLASE DEBE COINCIDIR CON LA PROPIEDAD INHERITS EN EL ASPX **
     public partial class MenuRoles : System.Web.UI.Page
     {
-        // Propiedad para mantener el rol seleccionado
-        public int RolSeleccionado {  get; set; }
-        
-           
-        
+        // Variable de estado para el ID del rol seleccionado
+        private int IdRolSeleccionado
+        {
+            get { return (int)(ViewState["IdRolSeleccionado"] ?? 0); }
+            set { ViewState["IdRolSeleccionado"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
+                // Llama al método para cargar los roles la primera vez
                 CargarRoles();
-                MostrarPanelNoSeleccionado();
             }
         }
 
-        private void CargarRoles()
+        // --- MÉTODOS REQUERIDOS POR LOS EVENTOS EN MenuRoles.aspx ---
+
+        // 1. Maneja el clic en el botón "+ Añadir"
+        protected void btnAgregarRol_Click(object sender, EventArgs e)
         {
-            try
-            {
-                // Asumiendo que tienes una clase RolDAO
-                RolDAO rolDAO = new RolDAO();
-                List<Rol> roles = rolDAO.ObtenerTodosLosRoles();
-                rptRoles.DataSource = roles;
-                rptRoles.DataBind();
-            }
-            catch (Exception ex)
-            {
-                // Mostrar mensaje de error
-                Response.Write("<script>alert('Error al cargar roles: " + ex.Message + "');</script>");
-            }
+            // Simulación de acción
+            ScriptManager.RegisterStartupScript(this, GetType(), "alert", "alert('Funcionalidad de agregar rol (IdRolSeleccionado: " + IdRolSeleccionado + ")');", true);
         }
 
+        // 2. Maneja los comandos del Repeater (Selección de Rol)
         protected void rptRoles_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "SeleccionarRol")
             {
-                RolSeleccionado = Convert.ToInt32(e.CommandArgument);
-                CargarDatosRol(RolSeleccionado);
-                CargarRoles(); // Recargar para actualizar el botón seleccionado
-                MostrarPanelRolSeleccionado();
+                // Guarda el ID del rol seleccionado
+                IdRolSeleccionado = Convert.ToInt32(e.CommandArgument);
+
+                // Llama a la función para mostrar los detalles y permisos de ese rol
+                MostrarDetallesRol(IdRolSeleccionado);
+
+                // Oculta el panel "No seleccionado" y muestra el de detalles
+                pnlNoSeleccionado.Visible = false;
+                pnlRolSeleccionado.Visible = true;
+
+                // Añade la clase 'selected' al botón presionado (requiere Javascript)
+                ScriptManager.RegisterStartupScript(this, GetType(), "selectRol", "document.querySelectorAll('.btn-rol').forEach(b => b.classList.remove('selected')); document.querySelector('input[value=\"" + e.Item.FindControl("btnRol").ClientID + "\"]').classList.add('selected');", true);
+
             }
         }
 
-        private void CargarDatosRol(int idRol)
-        {
-            try
-            {
-                // Cargar datos del rol
-                RolDAO rolDAO = new RolDAO();
-                Rol rol = rolDAO.ObtenerRolPorId(idRol);
-
-                if (rol != null)
-                {
-                    lblDescripcion.Text = rol.Descripcion ?? "Sin descripción";
-
-                    // Cargar permisos (esto depende de cómo tengas estructurada tu BD)
-                    // CargarPermisos(idRol);
-                }
-            }
-            catch (Exception ex)
-            {
-                Response.Write("<script>alert('Error al cargar datos del rol: " + ex.Message + "');</script>");
-            }
-        }
-
-        private void MostrarPanelRolSeleccionado()
-        {
-            pnlRolSeleccionado.Visible = true;
-            pnlNoSeleccionado.Visible = false;
-        }
-
-        private void MostrarPanelNoSeleccionado()
-        {
-            pnlRolSeleccionado.Visible = false;
-            pnlNoSeleccionado.Visible = true;
-        }
-
-        protected void btnAgregarRol_Click(object sender, EventArgs e)
-        {
-            // Redirigir a página de agregar rol o mostrar modal
-            Response.Redirect("AgregarRol.aspx");
-        }
-
+        // 3. Maneja el clic en el botón "Editar Descripción"
         protected void btnEditarDescripcion_Click(object sender, EventArgs e)
         {
-            // Implementar edición de descripción
-            // Puedes mostrar un TextBox o redirigir a otra página
-            Response.Write("<script>alert('Funcionalidad de editar en desarrollo');</script>");
+            ScriptManager.RegisterStartupScript(this, GetType(), "alert", $"alert('Editando descripción para Rol ID: {IdRolSeleccionado}');", true);
         }
 
+        // 4. Maneja el clic en el botón "Eliminar Rol"
         protected void btnEliminarRol_Click(object sender, EventArgs e)
         {
-            if (RolSeleccionado > 0)
-            {
-                try
-                {
-                    RolDAO rolDAO = new RolDAO();
-                    bool eliminado = rolDAO.EliminarRol(RolSeleccionado);
-
-                    if (eliminado)
-                    {
-                        Response.Write("<script>alert('Rol eliminado correctamente');</script>");
-                        RolSeleccionado = 0;
-                        CargarRoles();
-                        MostrarPanelNoSeleccionado();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert('Error al eliminar rol: " + ex.Message + "');</script>");
-                }
-            }
-            else
-            {
-                Response.Write("<script>alert('Seleccione un rol primero');</script>");
-            }
+            // NOTA: Implementar confirmación en el lado del cliente o aquí
+            ScriptManager.RegisterStartupScript(this, GetType(), "alert", $"alert('Eliminando Rol ID: {IdRolSeleccionado}');", true);
+            // Si el rol fue eliminado:
+            IdRolSeleccionado = 0;
+            pnlNoSeleccionado.Visible = true;
+            pnlRolSeleccionado.Visible = false;
+            CargarRoles();
         }
 
-        protected void ActualizarProgreso(object sender, EventArgs e)
-        {
-            // Calcular porcentaje de checkboxes marcados
-            int total = 9;
-            int marcados = 0;
-
-            if (chkAccesoMenu.Checked) marcados++;
-            if (chkMenuVisible.Checked) marcados++;
-            if (chkRedireccion.Checked) marcados++;
-            if (chkGestionUsuarios.Checked) marcados++;
-            if (chkGestionProductos.Checked) marcados++;
-            if (chkGestionPedidos.Checked) marcados++;
-            if (chkGestionTareas.Checked) marcados++;
-            if (chkReportes.Checked) marcados++;
-            if (chkConfiguracionRoles.Checked) marcados++;
-
-            int porcentaje = (int)((marcados * 100.0) / total);
-            lblProgreso.Text = porcentaje + "%";
-        }
-
+        // 5. Maneja el clic en el botón "Guardar Permisos"
         protected void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (RolSeleccionado > 0)
+            ScriptManager.RegisterStartupScript(this, GetType(), "alert", $"alert('Permisos guardados para Rol ID: {IdRolSeleccionado}');", true);
+        }
+
+        // 6. Maneja el cambio de estado en cualquier CheckBox
+        protected void ActualizarProgreso(object sender, EventArgs e)
+        {
+            int totalCheckboxes = 9;
+            List<CheckBox> checkboxes = new List<CheckBox> {
+                chkAccesoMenu, chkMenuVisible, chkRedireccion, chkGestionUsuarios, chkGestionProductos,
+                chkGestionPedidos, chkGestionTareas, chkReportes, chkConfiguracionRoles
+            };
+
+            int checkedCount = checkboxes.Count(chk => chk.Checked);
+            int porcentaje = (totalCheckboxes > 0) ? (checkedCount * 100) / totalCheckboxes : 0;
+            lblProgreso.Text = $"{porcentaje}%";
+        }
+
+        // --- MÉTODOS DE LÓGICA DE DATOS (Simulación) ---
+
+        private void CargarRoles()
+        {
+            // SIMULACIÓN DE DATOS
+            DataTable dt = new DataTable();
+            dt.Columns.Add("IdRol", typeof(int));
+            dt.Columns.Add("NombreRol", typeof(string));
+
+            dt.Rows.Add(1, "Administrador Supremo");
+            dt.Rows.Add(2, "Jefe de Almacén");
+            dt.Rows.Add(3, "Vendedor Junior");
+            dt.Rows.Add(4, "Visitante Invitado");
+
+            rptRoles.DataSource = dt;
+            rptRoles.DataBind();
+        }
+
+        private void MostrarDetallesRol(int idRol)
+        {
+            // SIMULACIÓN DE CARGA DE DETALLES
+            string nombre = "Rol No Encontrado";
+            string descripcion = "Seleccione un rol para ver su descripción";
+
+            // Simular permisos
+            bool esAdmin = idRol == 1;
+            bool esJefe = idRol == 2;
+            bool esVendedor = idRol == 3;
+            bool esVisitante = idRol == 4;
+
+            if (esAdmin)
             {
-                try
-                {
-                    // Guardar permisos
-                    RolDAO rolDAO = new RolDAO();
-
-                    // Crear objeto con los permisos
-                    Dictionary<string, bool> permisos = new Dictionary<string, bool>
-                    {
-                        { "AccesoMenu", chkAccesoMenu.Checked },
-                        { "MenuVisible", chkMenuVisible.Checked },
-                        { "Redireccion", chkRedireccion.Checked },
-                        { "GestionUsuarios", chkGestionUsuarios.Checked },
-                        { "GestionProductos", chkGestionProductos.Checked },
-                        { "GestionPedidos", chkGestionPedidos.Checked },
-                        { "GestionTareas", chkGestionTareas.Checked },
-                        { "Reportes", chkReportes.Checked },
-                        { "ConfiguracionRoles", chkConfiguracionRoles.Checked }
-                    };
-
-                    // Guardar en la base de datos
-                    // bool guardado = rolDAO.GuardarPermisos(RolSeleccionado, permisos);
-
-                    Response.Write("<script>alert('Permisos guardados correctamente');</script>");
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert('Error al guardar permisos: " + ex.Message + "');</script>");
-                }
+                nombre = "Administrador Supremo";
+                descripcion = "Control total sobre todos los módulos y la gestión de permisos.";
             }
-            else
+            else if (esJefe)
             {
-                Response.Write("<script>alert('Seleccione un rol primero');</script>");
+                nombre = "Jefe de Almacén";
+                descripcion = "Gestión de inventario, pedidos y reportes intermedios.";
             }
+            else if (esVendedor)
+            {
+                nombre = "Vendedor Junior";
+                descripcion = "Solo acceso a la gestión de pedidos y reportes básicos.";
+            }
+            else if (esVisitante)
+            {
+                nombre = "Visitante Invitado";
+                descripcion = "Rol limitado a la visualización de reportes básicos.";
+            }
+
+
+            lblNombreRol.Text = nombre;
+            lblDescripcion.Text = descripcion;
+
+            // Carga de permisos simulada
+            chkAccesoMenu.Checked = !esVisitante;
+            chkMenuVisible.Checked = !esVisitante;
+            chkRedireccion.Checked = esAdmin || esJefe;
+            chkGestionUsuarios.Checked = esAdmin;
+            chkGestionProductos.Checked = esAdmin || esJefe;
+            chkGestionPedidos.Checked = !esVisitante;
+            chkGestionTareas.Checked = esAdmin || esJefe;
+            chkReportes.Checked = true;
+            chkConfiguracionRoles.Checked = esAdmin;
+
+            ActualizarProgreso(null, null);
         }
     }
 }

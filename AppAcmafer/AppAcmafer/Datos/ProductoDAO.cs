@@ -1,16 +1,13 @@
 ﻿using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 
 namespace AppAcmafer.Datos
 {
     public class ProductoDAO
     {
-        // NO debe haber NADA aquí - elimina cualquier instancia de ConexionBD
-
         public List<Producto> ObtenerTodosLosProductos()
         {
             List<Producto> productos = new List<Producto>();
@@ -19,37 +16,44 @@ namespace AppAcmafer.Datos
 
             try
             {
-                // Línea 18 - debe ser EXACTAMENTE así:
                 conexion = ConexionBD.ObtenerConexion();
-
                 if (conexion != null)
                 {
                     conexion.Open();
-                }
 
-                string query = @"SELECT p.idProducto, p.nombre, p.descripcion, p.codigo,
-                                p.stockActual, p.estado, p.precioUnitario,
-                                p.idCategoria, c.nombre as nombreCategoria
-                                FROM producto p
-                                INNER JOIN categoria c ON p.idCategoria = c.idCategoria
-                                WHERE p.estado = 'Disponible'";
+                    string query = @"
+                        SELECT 
+                            p.idProducto, 
+                            p.nombre, 
+                            p.descripcion, 
+                            p.codigo,
+                            p.stockActual, 
+                            p.estado, 
+                            p.precioUnitario,
+                            p.idCategoria, 
+                            c.nombre as nombreCategoria
+                        FROM producto p
+                        INNER JOIN categoria c ON p.idCategoria = c.idCategoria
+                        WHERE p.estado = 'Disponible'";
 
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                reader = cmd.ExecuteReader();
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    reader = cmd.ExecuteReader();
 
-                while (reader.Read())
-                {
-                    productos.Add(new Producto
+                    while (reader.Read())
                     {
-                        IdProducto = Convert.ToInt32(reader["idProducto"]),
-                        Nombre = reader["nombre"].ToString(),
-                        Descripcion = reader["descripcion"].ToString(),
-                        Codigo = reader["codigo"].ToString(),
-                        Estado = reader["estado"].ToString(),
-                        PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"]),
-                        IdCategoria = Convert.ToInt32(reader["idCategoria"]),
-                        NombreCategoria = reader["nombreCategoria"].ToString()
-                    });
+                        productos.Add(new Producto
+                        {
+                            IdProducto = Convert.ToInt32(reader["idProducto"]),
+                            Nombre = reader["nombre"].ToString(),
+                            Descripcion = reader["descripcion"].ToString(),
+                            Codigo = reader["codigo"].ToString(),
+                            StockActual = Convert.ToInt32(reader["stockActual"]),  // ✅ Ahora es int
+                            Estado = reader["estado"].ToString(),
+                            PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"]),
+                            IdCategoria = Convert.ToInt32(reader["idCategoria"]),
+                            NombreCategoria = reader["nombreCategoria"].ToString()
+                        });
+                    }
                 }
             }
             catch (Exception ex)
@@ -58,18 +62,85 @@ namespace AppAcmafer.Datos
             }
             finally
             {
-                if (reader != null)
+                if (reader != null && !reader.IsClosed)
                 {
                     reader.Close();
                 }
-
-                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                if (conexion != null && conexion.State == ConnectionState.Open)
                 {
                     conexion.Close();
                 }
             }
 
             return productos;
+        }
+
+        public Producto ObtenerProductoPorId(int idProducto)
+        {
+            Producto producto = null;
+            SqlConnection conexion = null;
+            SqlDataReader reader = null;
+
+            try
+            {
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
+                {
+                    conexion.Open();
+
+                    string query = @"
+                        SELECT 
+                            p.idProducto, 
+                            p.nombre, 
+                            p.descripcion, 
+                            p.codigo,
+                            p.stockActual, 
+                            p.estado, 
+                            p.precioUnitario,
+                            p.idCategoria, 
+                            c.nombre as nombreCategoria
+                        FROM producto p
+                        INNER JOIN categoria c ON p.idCategoria = c.idCategoria
+                        WHERE p.idProducto = @IdProducto";
+
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@IdProducto", idProducto);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
+                    {
+                        producto = new Producto
+                        {
+                            IdProducto = Convert.ToInt32(reader["idProducto"]),
+                            Nombre = reader["nombre"].ToString(),
+                            Descripcion = reader["descripcion"].ToString(),
+                            Codigo = reader["codigo"].ToString(),
+                            StockActual = Convert.ToInt32(reader["stockActual"]),
+                            Estado = reader["estado"].ToString(),
+                            PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"]),
+                            IdCategoria = Convert.ToInt32(reader["idCategoria"]),
+                            NombreCategoria = reader["nombreCategoria"].ToString()
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener producto: " + ex.Message);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                {
+                    reader.Close();
+                }
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+
+            return producto;
         }
     }
 }

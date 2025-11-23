@@ -13,9 +13,9 @@ namespace AppAcmafer.Modelo
         public string Nombre { get; set; }
         public string Descripcion { get; set; }
         public string Codigo { get; set; }
-        public string StockActual { get; set; }
+        public int StockActual { get; set; }  // ✅ CAMBIADO de string a int
         public string Estado { get; set; }
-        public byte[] Imagen {  get; set; }
+        public byte[] Imagen { get; set; }
         public DateTime FechaCreacion { get; set; }
         public decimal PrecioUnitario { get; set; }
         public int IdCategoria { get; set; }
@@ -33,7 +33,7 @@ namespace AppAcmafer.Modelo
             Nombre = string.Empty;
             Descripcion = string.Empty;
             Codigo = string.Empty;
-            StockActual = "0";
+            StockActual = 0;  // ✅ CAMBIADO de "0" a 0
             Estado = "Disponible";
             Imagen = null;
             FechaCreacion = DateTime.Now;

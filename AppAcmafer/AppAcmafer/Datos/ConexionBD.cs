@@ -9,41 +9,51 @@ namespace AppAcmafer.Datos
 {
     public class ConexionBD
     {
-       
-       
-            public static SqlConnection ObtenerConexion()
+        // Método para obtener la conexión
+        public static SqlConnection ObtenerConexion()
+        {
+            try
             {
-                try
+                // Verificar que existe la cadena de conexión
+                if (ConfigurationManager.ConnectionStrings["CadenaConexion"] == null)
                 {
-                    
-                    string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
-
-                    // 2. Crear y retornar el objeto SqlConnection.
-                    SqlConnection conexion = new SqlConnection(connectionString);
-
-                    
-
-                    return conexion;
+                    throw new Exception("No se encontró la cadena de conexión 'CadenaConexion' en Web.config");
                 }
-                catch (Exception ex)
+
+                string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+
+                // Verificar que no esté vacía
+                if (string.IsNullOrEmpty(connectionString))
                 {
-                   
-                    Console.WriteLine("Error al obtener la cadena de conexión: " + ex.Message);
-                    return null;
+                    throw new Exception("La cadena de conexión 'CadenaConexion' está vacía");
                 }
+
+                // Crear y retornar el objeto SqlConnection
+                SqlConnection conexion = new SqlConnection(connectionString);
+                return conexion;
             }
+            catch (Exception ex)
+            {
+                // Log del error para debugging
+                Console.WriteLine("Error al obtener la cadena de conexión: " + ex.Message);
+                throw new Exception("Error al obtener la cadena de conexión: " + ex.Message);
+            }
+        }
 
-            // El método CerrarConexion ya no es necesario si usas el patrón 'using'
-            // en tus clases DAO (como lo hicimos en CD_Compra y como lo hace CD_AsignacionTarea).
-            /*
-            public void CerrarConexion(SqlConnection conexion)
+        // Método alternativo para cerrar conexión (opcional, pero útil)
+        public static void CerrarConexion(SqlConnection conexion)
+        {
+            try
             {
                 if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
                 {
                     conexion.Close();
                 }
             }
-            */
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al cerrar conexión: " + ex.Message);
+            }
+        }
     }
-    
 }

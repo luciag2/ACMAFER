@@ -1,6 +1,8 @@
 ﻿using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -36,6 +38,20 @@ namespace AppAcmafer.Datos
             }
 
             return lista;
+        }
+    
+    public DataTable ListarCategorias()
+        {
+            DataTable dt = new DataTable();
+            string conexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                string query = "SELECT idCategoria, nombre FROM categoria";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
         }
     }
 }

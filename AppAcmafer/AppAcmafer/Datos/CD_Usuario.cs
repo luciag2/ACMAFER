@@ -1,188 +1,346 @@
 ﻿using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace AppAcmafer.Datos
 {
     public class CD_Usuario
     {
-        public List<Usuario> Listar()
+        // ============ LISTAR USUARIOS ============
+        public DataTable ListarUsuarios()
         {
-            List<Usuario> lista = new List<Usuario>();
+            DataTable dt = new DataTable();
+            SqlConnection conexion = null;
 
-            // CORRECCIÓN CS0103
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion())
+            try
             {
-                // Trae usuarios que estén activos Y que tengan el Rol de Empleado (ID 2 es un ejemplo común)
-                string query = @"SELECT u.idUsuario, u.nombre, u.apellido, u.correo, u.telefono, u.idRol, r.nombre AS rolNombre
-                         FROM usuario u
-                         INNER JOIN Rol r ON u.idRol = r.idRol
-                         WHERE u.estado = 'Activo' AND r.nombre = 'Empleado' 
-                         -- o WHERE u.idRol = 2 -- Si prefieres usar el ID directamente
-                        ";
-
-                SqlCommand cmd = new SqlCommand(query, conexion);
-
-                try
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
                 {
                     conexion.Open();
 
-                    using (SqlDataReader dr = cmd.ExecuteReader())
-                    {
-                        while (dr.Read())
-                        {
-                            lista.Add(new Usuario()
-                            {
-                                IdUsuario = Convert.ToInt32(dr["idUsuario"]),
-                                Nombre = dr["nombre"].ToString(),
-                                Apellido = dr["apellido"].ToString(),
-                                // ... mapeo de otras propiedades
+                    string query = @"
+                        SELECT 
+                            u.idUsuario,
+                            u.documento,
+                            u.nombre,
+                            u.apellido,
+                            u.email,
+                            u.celular,
+                            u.estado,
+                            r.rol as nombreRol,
+                            u.idRol
+                        FROM usuario u
+                        LEFT JOIN rol r ON u.idRol = r.idRol
+                        ORDER BY u.idUsuario";
 
-                                Rol = new Rol() // Asumo que tienes una clase Rol
-                                {
-                                    IdRol = Convert.ToInt32(dr["idRol"]),
-                                    NombreRol = dr["rolNombre"].ToString()
-                                }
-                            });
-                        }
-                    }
-                }
-                catch (Exception)
-                {
-                    // Manejo de errores
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                    adapter.Fill(dt);
                 }
             }
-            return lista;
-        }
-
-        // ... (Debes aplicar la misma corrección de conexión en Registrar, Editar, Eliminar, etc.)
-    
-
-        // Método para REGISTRAR un usuario
-        public int Registrar(Usuario obj, out string mensaje)
-        {
-            int idGenerado = 0;
-            mensaje = string.Empty;
-
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion()) 
+            catch (Exception ex)
             {
-                string query = @"INSERT INTO usuario (documento, nombre, apellido, 
-                                email, celular, clave, estado, idRol) 
-                                VALUES (@documento, @nombre, @apellido, @email, 
-                                @celular, @clave, 'Activo', @idRol);
-                                SELECT SCOPE_IDENTITY();";
-
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@documento", obj.Documento);
-                cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", obj.Apellido);
-                cmd.Parameters.AddWithValue("@email", obj.Email);
-                cmd.Parameters.AddWithValue("@celular", obj.Celular);
-                cmd.Parameters.AddWithValue("@clave", obj.Clave);
-                cmd.Parameters.AddWithValue("@idRol", obj.IdRol);
-
-                conexion.Open();
-                idGenerado = Convert.ToInt32(cmd.ExecuteScalar());
-                mensaje = "Usuario registrado correctamente";
+                throw new Exception("Error al listar usuarios: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
             }
 
-            return idGenerado;
+            return dt;
         }
 
-        // Método para VALIDAR LOGIN
-        public Usuario ValidarLogin(string email, string clave)
+        // ============ CAMBIAR CONTRASEÑA ============
+        public bool CambiarContrasena(int idUsuario, string claveActual, string claveNueva)
+        {
+            SqlConnection conexion = null;
+
+            try
+            {
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
+                {
+                    conexion.Open();
+
+                    // Primero verificar que la contraseña actual sea correcta
+                    string queryVerificar = "SELECT clave FROM usuario WHERE idUsuario = @IdUsuario";
+                    SqlCommand cmdVerificar = new SqlCommand(queryVerificar, conexion);
+                    cmdVerificar.Parameters.AddWithValue("@IdUsuario", idUsuario);
+
+                    string claveGuardada = cmdVerificar.ExecuteScalar()?.ToString();
+
+                    if (string.IsNullOrEmpty(claveGuardada))
+                    {
+                        return false; // Usuario no encontrado
+                    }
+
+                    // Verificar si la clave actual coincide
+                    if (claveGuardada != claveActual)
+                    {
+                        return false; // Contraseña actual incorrecta
+                    }
+
+                    // Actualizar a la nueva contraseña
+                    string queryActualizar = @"
+                        UPDATE usuario 
+                        SET clave = @ClaveNueva 
+                        WHERE idUsuario = @IdUsuario";
+
+                    SqlCommand cmdActualizar = new SqlCommand(queryActualizar, conexion);
+                    cmdActualizar.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmdActualizar.Parameters.AddWithValue("@ClaveNueva", claveNueva);
+
+                    int filasAfectadas = cmdActualizar.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al cambiar contraseña: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        // ============ ASIGNAR ROL A USUARIO ============
+        public bool AsignarRol(int idUsuario, int idRol)
+        {
+            SqlConnection conexion = null;
+
+            try
+            {
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
+                {
+                    conexion.Open();
+
+                    // Actualizar el rol directamente en la tabla usuario
+                    string queryActualizar = @"
+                        UPDATE usuario 
+                        SET idRol = @IdRol 
+                        WHERE idUsuario = @IdUsuario";
+
+                    SqlCommand cmd = new SqlCommand(queryActualizar, conexion);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    cmd.Parameters.AddWithValue("@IdRol", idRol);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+
+                    // También insertar en la tabla usuarioRol si existe
+                    if (filasAfectadas > 0)
+                    {
+                        string queryUsuarioRol = @"
+                            IF NOT EXISTS (SELECT 1 FROM usuarioRol WHERE idUsuario = @IdUsuario AND idRol = @IdRol)
+                            BEGIN
+                                INSERT INTO usuarioRol (idUsuario, idRol) 
+                                VALUES (@IdUsuario, @IdRol)
+                            END";
+
+                        SqlCommand cmdUsuarioRol = new SqlCommand(queryUsuarioRol, conexion);
+                        cmdUsuarioRol.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                        cmdUsuarioRol.Parameters.AddWithValue("@IdRol", idRol);
+                        cmdUsuarioRol.ExecuteNonQuery();
+                    }
+
+                    return filasAfectadas > 0;
+                }
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al asignar rol: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+        }
+
+        // ============ OBTENER USUARIO POR ID ============
+        public Usuario ObtenerUsuarioPorId(int idUsuario)
         {
             Usuario usuario = null;
+            SqlConnection conexion = null;
+            SqlDataReader reader = null;
 
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion()) 
+            try
             {
-                string query = @"SELECT u.idUsuario, u.nombre, u.apellido, 
-                                u.email, u.idRol, r.rol 
-                                FROM usuario u
-                                INNER JOIN rol r ON u.idRol = r.idRol
-                                WHERE u.email = @email AND u.clave = @clave 
-                                AND u.estado = 'Activo'";
-
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@email", email);
-                cmd.Parameters.AddWithValue("@clave", clave);
-
-                conexion.Open();
-
-                using (SqlDataReader dr = cmd.ExecuteReader())
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
                 {
-                    if (dr.Read())
+                    conexion.Open();
+
+                    string query = @"
+                        SELECT 
+                            u.idUsuario,
+                            u.documento,
+                            u.nombre,
+                            u.apellido,
+                            u.email,
+                            u.celular,
+                            u.clave,
+                            u.estado,
+                            u.idRol
+                        FROM usuario u
+                        WHERE u.idUsuario = @IdUsuario";
+
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@IdUsuario", idUsuario);
+                    reader = cmd.ExecuteReader();
+
+                    if (reader.Read())
                     {
-                        usuario = new Usuario()
+                        usuario = new Usuario
                         {
-                            IdUsuario = Convert.ToInt32(dr["idUsuario"]),
-                            Nombre = dr["nombre"].ToString(),
-                            Apellido = dr["apellido"].ToString(),
-                            Email = dr["email"].ToString(),
-                            IdRol = Convert.ToInt32(dr["idRol"]),
-                            Rol = new Rol() { NombreRol = dr["rol"].ToString() }
+                            IdUsuario = Convert.ToInt32(reader["idUsuario"]),
+                            Documento = reader["documento"].ToString(),
+                            Nombre = reader["nombre"].ToString(),
+                            Apellido = reader["apellido"].ToString(),
+                            Email = reader["email"].ToString(),
+                            Celular = reader["celular"].ToString(),
+                            Clave = reader["clave"].ToString(),
+                            Estado = reader["estado"].ToString(),
+                            IdRol = Convert.ToInt32(reader["idRol"])
                         };
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener usuario: " + ex.Message);
+            }
+            finally
+            {
+                if (reader != null && !reader.IsClosed)
+                {
+                    reader.Close();
+                }
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
                 }
             }
 
             return usuario;
         }
 
-        // Método para EDITAR usuario
-        public bool Editar(Usuario obj, out string mensaje)
+        // ============ INSERTAR USUARIO ============
+        public bool InsertarUsuario(Usuario usuario)
         {
-            bool respuesta = false;
-            mensaje = string.Empty;
+            SqlConnection conexion = null;
 
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion()) 
+            try
             {
-                string query = @"UPDATE usuario SET documento = @documento, 
-                                nombre = @nombre, apellido = @apellido, 
-                                email = @email, celular = @celular, 
-                                idRol = @idRol 
-                                WHERE idUsuario = @idUsuario";
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
+                {
+                    conexion.Open();
 
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@idUsuario", obj.IdUsuario);
-                cmd.Parameters.AddWithValue("@documento", obj.Documento);
-                cmd.Parameters.AddWithValue("@nombre", obj.Nombre);
-                cmd.Parameters.AddWithValue("@apellido", obj.Apellido);
-                cmd.Parameters.AddWithValue("@email", obj.Email);
-                cmd.Parameters.AddWithValue("@celular", obj.Celular);
-                cmd.Parameters.AddWithValue("@idRol", obj.IdRol);
+                    string query = @"
+                        INSERT INTO usuario 
+                        (documento, nombre, apellido, email, celular, clave, estado, idRol)
+                        VALUES 
+                        (@Documento, @Nombre, @Apellido, @Email, @Celular, @Clave, @Estado, @IdRol)";
 
-                conexion.Open();
-                respuesta = cmd.ExecuteNonQuery() > 0;
-                mensaje = "Usuario editado correctamente";
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@Documento", usuario.Documento);
+                    cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                    cmd.Parameters.AddWithValue("@Email", usuario.Email);
+                    cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                    cmd.Parameters.AddWithValue("@Clave", usuario.Clave);
+                    cmd.Parameters.AddWithValue("@Estado", usuario.Estado);
+                    cmd.Parameters.AddWithValue("@IdRol", usuario.IdRol);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+
+                return false;
             }
-
-            return respuesta;
+            catch (Exception ex)
+            {
+                throw new Exception("Error al insertar usuario: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
         }
 
-        // Método para ELIMINAR usuario
-        public bool Eliminar(int id, out string mensaje)
+        // ============ ACTUALIZAR USUARIO ============
+        public bool ActualizarUsuario(Usuario usuario)
         {
-            bool respuesta = false;
-            mensaje = string.Empty;
+            SqlConnection conexion = null;
 
-            using (SqlConnection conexion = ConexionBD.ObtenerConexion()) 
+            try
             {
-                string query = "UPDATE usuario SET estado = 'Inactivo' WHERE idUsuario = @id";
+                conexion = ConexionBD.ObtenerConexion();
+                if (conexion != null)
+                {
+                    conexion.Open();
 
-                SqlCommand cmd = new SqlCommand(query, conexion);
-                cmd.Parameters.AddWithValue("@id", id);
+                    string query = @"
+                        UPDATE usuario 
+                        SET 
+                            documento = @Documento,
+                            nombre = @Nombre,
+                            apellido = @Apellido,
+                            email = @Email,
+                            celular = @Celular,
+                            estado = @Estado,
+                            idRol = @IdRol
+                        WHERE idUsuario = @IdUsuario";
 
-                conexion.Open();
-                respuesta = cmd.ExecuteNonQuery() > 0;
-                mensaje = "Usuario eliminado correctamente";
+                    SqlCommand cmd = new SqlCommand(query, conexion);
+                    cmd.Parameters.AddWithValue("@IdUsuario", usuario.IdUsuario);
+                    cmd.Parameters.AddWithValue("@Documento", usuario.Documento);
+                    cmd.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                    cmd.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                    cmd.Parameters.AddWithValue("@Email", usuario.Email);
+                    cmd.Parameters.AddWithValue("@Celular", usuario.Celular);
+                    cmd.Parameters.AddWithValue("@Estado", usuario.Estado);
+                    cmd.Parameters.AddWithValue("@IdRol", usuario.IdRol);
+
+                    int filasAfectadas = cmd.ExecuteNonQuery();
+                    return filasAfectadas > 0;
+                }
+
+                return false;
             }
-
-            return respuesta;
+            catch (Exception ex)
+            {
+                throw new Exception("Error al actualizar usuario: " + ex.Message);
+            }
+            finally
+            {
+                if (conexion != null && conexion.State == ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
         }
     }
 }
-

@@ -5,6 +5,7 @@ using System.Web;
 
 namespace AppAcmafer.Modelo
 {
+    [Serializable]
     public class Usuario
     {
         public int IdUsuario { get; set; }

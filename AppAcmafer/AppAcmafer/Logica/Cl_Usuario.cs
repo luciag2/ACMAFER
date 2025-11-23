@@ -1,6 +1,8 @@
-﻿using AppAcmafer.Modelo;
+﻿using AppAcmafer.Datos;
+using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -11,6 +13,43 @@ namespace AppAcmafer.Logica
 {
     public class Cl_Usuario
     {
+        private CD_Usuario usuarioDatos = new CD_Usuario();
+
+        public DataTable ObtenerUsuarios()
+        {
+            return usuarioDatos.ListarUsuarios();
+        }
+
+        public bool CambiarContrasena(int idUsuario, string claveActual, string claveNueva)
+        {
+            // Validar que la nueva contraseña cumpla con las reglas de seguridad
+            if (!ValidarContrasena(claveNueva))
+                return false;
+
+            return usuarioDatos.CambiarContrasena(idUsuario, claveActual, claveNueva);
+        }
+
+        // ============ ASIGNAR ROL ============
+        public bool AsignarRol(int idUsuario, int idRol)
+        {
+            if (idUsuario <= 0 || idRol <= 0)
+                return false;
+
+            return usuarioDatos.AsignarRol(idUsuario, idRol);
+        }
+
+        private bool ValidarContrasena(string contrasena)
+        {
+            // Mínimo 6 caracteres, al menos una letra y un número
+            if (contrasena.Length < 6)
+                return false;
+
+            bool tieneLetra = Regex.IsMatch(contrasena, @"[a-zA-Z]");
+            bool tieneNumero = Regex.IsMatch(contrasena, @"[0-9]");
+
+            return tieneLetra && tieneNumero;
+        }
+
         // Método para VALIDAR email
         public bool ValidarEmail(string email)
         {
@@ -127,6 +166,24 @@ namespace AppAcmafer.Logica
             }
 
             return true;
+        }
+
+        // ============ OBTENER USUARIO POR ID ============
+        public Usuario ObtenerUsuarioPorId(int idUsuario)
+        {
+            return usuarioDatos.ObtenerUsuarioPorId(idUsuario);
+        }
+
+        // ============ INSERTAR USUARIO ============
+        public bool InsertarUsuario(Usuario usuario)
+        {
+            return usuarioDatos.InsertarUsuario(usuario);
+        }
+
+        // ============ ACTUALIZAR USUARIO ============
+        public bool ActualizarUsuario(Usuario usuario)
+        {
+            return usuarioDatos.ActualizarUsuario(usuario);
         }
     }
 }

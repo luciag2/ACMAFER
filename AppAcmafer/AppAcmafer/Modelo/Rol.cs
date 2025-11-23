@@ -13,6 +13,7 @@ namespace AppAcmafer.Modelo
         public string Descripcion { get; set; }
         public DateTime FechaCreacion { get; set; }
         public string Estado { get; set; }
+        
 
         // Constructor vacío
         public Rol()

@@ -6,6 +6,7 @@ using System.Web;
 
 namespace AppAcmafer.Modelo
 {
+    [Serializable]
     public class Tarea
     {
         public int IdTarea { get; set; }

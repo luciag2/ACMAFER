@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AppAcmafer.Datos;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -7,6 +9,15 @@ namespace AppAcmafer.Logica
 {
     public class Cl_Rol
     {
+        
+        private CD_Rol rolDAO = new CD_Rol();
+
+        // Agrega este método
+        public DataTable ObtenerRoles()
+        {
+            return rolDAO.ObtenerRoles();
+        }
+
         // Método para VALIDAR acceso según rol
         public bool ValidarAcceso(int idRol, string nombreMenu)
         {

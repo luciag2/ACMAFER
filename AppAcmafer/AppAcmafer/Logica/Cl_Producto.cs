@@ -1,63 +1,101 @@
-﻿using AppAcmafer.Modelo;
+﻿using AppAcmafer.Datos;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data;
 
 namespace AppAcmafer.Logica
 {
     public class CL_Producto
     {
-        public bool ValidarStock(int stockActual, int cantidad)
+        private CD_Producto productoDatos = new CD_Producto();
+
+        // MÉTODO CORREGIDO - Ahora recibe int y decimal
+        public bool ActualizarProducto(int idProducto, string nombre, string descripcion,
+                                       string codigo, int stock, decimal precio, int idCategoria)
         {
-            return stockActual >= cantidad;
+            // Validaciones
+            if (string.IsNullOrWhiteSpace(nombre))
+            {
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(codigo))
+            {
+                return false;
+            }
+
+            if (stock < 0)
+            {
+                return false;
+            }
+
+            if (precio <= 0)
+            {
+                return false;
+            }
+
+            if (idCategoria == 0)
+            {
+                return false;
+            }
+
+            try
+            {
+                // Llama al método de la capa de datos con los parámetros correctos
+                return productoDatos.ActualizarProducto(idProducto, nombre, descripcion,
+                                                        codigo, stock, precio, idCategoria);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en la capa lógica al actualizar producto: " + ex.Message);
+            }
         }
 
-        public decimal CalcularPrecioConDescuento(decimal precioUnitario, decimal descuento)
+        public DataTable ObtenerProductos()
         {
-            return precioUnitario - (precioUnitario * (descuento / 100));
+            try
+            {
+                return productoDatos.ListarProductos();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener productos: " + ex.Message);
+            }
         }
 
-        public bool ValidarDatosProducto(Producto producto, out string mensaje)
+        public DataRow ObtenerProducto(int idProducto)
         {
-            mensaje = string.Empty;
-
-            // Validar nombre
-            if (string.IsNullOrEmpty(producto.Nombre))
+            try
             {
-                mensaje = "El nombre es obligatorio";
-                return false;
+                return productoDatos.ObtenerProductoPorId(idProducto);
             }
-
-            // Validar código
-            if (string.IsNullOrEmpty(producto.Codigo))
+            catch (Exception ex)
             {
-                mensaje = "El código es obligatorio";
-                return false;
+                throw new Exception("Error al obtener producto: " + ex.Message);
             }
+        }
 
-
-            // Validar precio (es decimal, no string)
-            if (producto.PrecioUnitario <= 0)
+        public DataTable ObtenerHistorial(int idProducto)
+        {
+            try
             {
-                mensaje = "El precio es obligatorio y debe ser mayor a cero";
-                return false;
+                return productoDatos.ObtenerHistorialProducto(idProducto);
             }
-
-            // Validar categoría
-            if (producto.IdCategoria == 0)
+            catch (Exception ex)
             {
-                mensaje = "Debe seleccionar una categoría";
-                return false;
+                throw new Exception("Error al obtener historial: " + ex.Message);
             }
-
-            return true;
         }
 
         public bool ValidarCodigoUnico(string codigo, int idProducto = 0)
         {
-           
-            return true;
+            try
+            {
+                return productoDatos.ValidarCodigoUnico(codigo, idProducto);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al validar código: " + ex.Message);
+            }
         }
     }
 }

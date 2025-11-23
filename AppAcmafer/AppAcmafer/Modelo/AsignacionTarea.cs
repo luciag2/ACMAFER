@@ -10,13 +10,21 @@ namespace AppAcmafer.Modelo
     {
         public int IdAsignacionTarea { get; set; }
         public int IdTarea { get; set; }
+        public string TituloTarea { get; set; }
         public int IdEmpleado { get; set; }
+        public string NombreEmpleado { get; set; }
         public int IdAdmin { get; set; }
+        public string NombreAdmin { get; set; }
         public DateTime FechaInicio { get; set; }
         public string HoraInicio { get; set; }
         public DateTime FechaFin { get; set; }
         public string HoraFin { get; set; }
         public string ComentarioAdmin { get; set; }
+
+        // PROPIEDADES NUEVAS QUE FALTABAN
+        public string DescripcionTarea { get; set; }
+        public string Prioridad { get; set; }
+        public string EstadoTarea { get; set; }
 
         // Navegación
         public Tarea Tarea { get; set; }
@@ -35,6 +43,9 @@ namespace AppAcmafer.Modelo
             FechaFin = DateTime.Now;
             HoraFin = string.Empty;
             ComentarioAdmin = string.Empty;
+            DescripcionTarea = string.Empty;
+            Prioridad = string.Empty;
+            EstadoTarea = string.Empty;
             Tarea = null;
             Empleado = null;
             Admin = null;

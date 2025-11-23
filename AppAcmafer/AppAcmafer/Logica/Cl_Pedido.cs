@@ -1,6 +1,8 @@
-﻿using AppAcmafer.Modelo;
+﻿using AppAcmafer.Datos;
+using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 
@@ -64,6 +66,33 @@ namespace AppAcmafer.Logica
         public string GenerarNumeroPedido()
         {
             return DateTime.Now.ToString("yyyyMMddHHmmss");
+        }
+    
+      private CD_Pedido pedidoDatos = new CD_Pedido();
+
+        public bool CrearPedido(string numeroPedido, int idCliente, string observaciones,
+                               int idProducto, int cantidad, out string mensaje)
+        {
+            // Validaciones de negocio
+            if (cantidad <= 0)
+            {
+                mensaje = "La cantidad debe ser mayor a 0";
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(numeroPedido))
+            {
+                mensaje = "El número de pedido es obligatorio";
+                return false;
+            }
+
+            return pedidoDatos.CrearPedido(numeroPedido, idCliente, observaciones,
+                                          idProducto, cantidad, out mensaje);
+        }
+
+        public DataTable ObtenerPedidos()
+        {
+            return pedidoDatos.ListarPedidos();
         }
     }
 }

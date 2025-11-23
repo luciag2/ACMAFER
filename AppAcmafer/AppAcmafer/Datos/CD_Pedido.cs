@@ -1,6 +1,8 @@
 ﻿using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace AppAcmafer.Datos
@@ -130,6 +132,105 @@ namespace AppAcmafer.Datos
             }
 
             return lista;
+        }
+    
+     // Crear pedido con validación de stock
+        public bool CrearPedido(string numeroPedido, int idCliente, string observaciones,
+                               int idProducto, int cantidad, out string mensaje)
+        {
+            mensaje = "";
+            string conexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                conn.Open();
+                SqlTransaction transaction = conn.BeginTransaction();
+
+                try
+                {
+                    // 1. Verificar stock disponible
+                    string queryStock = "SELECT stockActual FROM producto WHERE idProducto = @idProducto";
+                    SqlCommand cmdStock = new SqlCommand(queryStock, conn, transaction);
+                    cmdStock.Parameters.AddWithValue("@idProducto", idProducto);
+
+                    object stockObj = cmdStock.ExecuteScalar();
+                    int stockActual = stockObj != null ? Convert.ToInt32(stockObj) : 0;
+
+                    // 2. Validar que hay suficiente stock
+                    if (cantidad > stockActual)
+                    {
+                        mensaje = $"❌ Stock insuficiente. Disponible: {stockActual}, Solicitado: {cantidad}";
+                        transaction.Rollback();
+                        return false;
+                    }
+
+                    // 3. Crear el pedido
+                    string queryPedido = @"INSERT INTO pedido (numeroPedido, fechaPedido, estado, observaciones, idCliente) 
+                                          VALUES (@numeroPedido, GETDATE(), 'Pendiente', @observaciones, @idCliente);
+                                          SELECT SCOPE_IDENTITY();";
+                    SqlCommand cmdPedido = new SqlCommand(queryPedido, conn, transaction);
+                    cmdPedido.Parameters.AddWithValue("@numeroPedido", numeroPedido);
+                    cmdPedido.Parameters.AddWithValue("@observaciones", observaciones);
+                    cmdPedido.Parameters.AddWithValue("@idCliente", idCliente);
+
+                    int idPedido = Convert.ToInt32(cmdPedido.ExecuteScalar());
+
+                    // 4. Obtener precio del producto
+                    string queryPrecio = "SELECT precioUnitario FROM producto WHERE idProducto = @idProducto";
+                    SqlCommand cmdPrecio = new SqlCommand(queryPrecio, conn, transaction);
+                    cmdPrecio.Parameters.AddWithValue("@idProducto", idProducto);
+                    decimal precioUnitario = Convert.ToDecimal(cmdPrecio.ExecuteScalar());
+                    decimal valorTotal = precioUnitario * cantidad;
+
+                    // 5. Crear la compra
+                    string queryCompra = @"INSERT INTO compra (cantidad, valorTotal, descuento, idProducto, idPedido)
+                                          VALUES (@cantidad, @valorTotal, '0', @idProducto, @idPedido)";
+                    SqlCommand cmdCompra = new SqlCommand(queryCompra, conn, transaction);
+                    cmdCompra.Parameters.AddWithValue("@cantidad", cantidad.ToString());
+                    cmdCompra.Parameters.AddWithValue("@valorTotal", valorTotal.ToString());
+                    cmdCompra.Parameters.AddWithValue("@idProducto", idProducto);
+                    cmdCompra.Parameters.AddWithValue("@idPedido", idPedido);
+                    cmdCompra.ExecuteNonQuery();
+
+                    // 6. Actualizar el stock
+                    string queryActualizarStock = @"UPDATE producto 
+                                                   SET stockActual = stockActual - @cantidad 
+                                                   WHERE idProducto = @idProducto";
+                    SqlCommand cmdActualizarStock = new SqlCommand(queryActualizarStock, conn, transaction);
+                    cmdActualizarStock.Parameters.AddWithValue("@cantidad", cantidad);
+                    cmdActualizarStock.Parameters.AddWithValue("@idProducto", idProducto);
+                    cmdActualizarStock.ExecuteNonQuery();
+
+                    transaction.Commit();
+                    mensaje = $"✅ Pedido creado exitosamente. Nuevo stock: {stockActual - cantidad}";
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    transaction.Rollback();
+                    mensaje = "❌ Error al crear el pedido: " + ex.Message;
+                    return false;
+                }
+            }
+        }
+
+        // Listar pedidos
+        public DataTable ListarPedidos()
+        {
+            DataTable dt = new DataTable();
+            string conexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            using (SqlConnection conn = new SqlConnection(conexion))
+            {
+                string query = @"SELECT p.idPedido, p.numeroPedido, p.fechaPedido, p.estado,
+                                u.nombre + ' ' + u.apellido as Cliente, p.observaciones
+                                FROM pedido p
+                                INNER JOIN usuario u ON p.idCliente = u.idUsuario
+                                ORDER BY p.fechaPedido DESC";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+            }
+            return dt;
         }
     }
 }

@@ -6,12 +6,12 @@
             ✅ Asignación de Tareas a Empleados
         </h2>
         
-        <!-- Alerta de acceso -->
+        
         <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 15px; margin-bottom: 20px; border-radius: 5px;">
             <strong>ℹ️ Información:</strong> Esta sección solo está disponible para Administradores y Supervisores.
         </div>
         
-        <!-- Filtros -->
+        
         <div style="margin-bottom: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px;">
             <div style="display: flex; gap: 15px; align-items: center; flex-wrap: wrap;">
                 <div>
