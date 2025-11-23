@@ -16,5 +16,20 @@ namespace AppAcmafer.Modelo
 
         // Propiedad adicional
         public string NombreCliente { get; set; }
+
+        // Navegación
+        public Usuario Cliente { get; set; }
+
+        // Constructor
+        public Pedido()
+        {
+            IdPedido = 0;
+            NumeroPedido = string.Empty;
+            FechaPedido = DateTime.Now;
+            Estado = "Pendiente";
+            Observaciones = string.Empty;
+            IdCliente = 0;
+            Cliente = null;
+        }
     }
 }

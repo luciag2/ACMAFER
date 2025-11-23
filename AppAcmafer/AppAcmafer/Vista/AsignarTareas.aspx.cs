@@ -8,11 +8,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace AppAcmafer.Vista
+
 {
+    [Serializable]
     public partial class AsignarTareas : System.Web.UI.Page
     {
         private TareaDAO tareaDAO = new TareaDAO();
-        private List<AsignacionTarea> todasLasAsignaciones;
+
+        // Propiedad para manejar la lista
+        private List<AsignacionTarea> TodasLasAsignaciones
+        {
+            get
+            {
+                if (Session["Asignaciones"] != null)
+                    return (List<AsignacionTarea>)Session["Asignaciones"];
+                return new List<AsignacionTarea>();
+            }
+            set
+            {
+                Session["Asignaciones"] = value;
+            }
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,11 +52,9 @@ namespace AppAcmafer.Vista
         {
             try
             {
-                todasLasAsignaciones = tareaDAO.ObtenerAsignacionesTareas();
-                gvAsignaciones.DataSource = todasLasAsignaciones;
+                TodasLasAsignaciones = tareaDAO.ObtenerAsignacionesTareas();
+                gvAsignaciones.DataSource = TodasLasAsignaciones;
                 gvAsignaciones.DataBind();
-
-                ViewState["Asignaciones"] = todasLasAsignaciones;
             }
             catch (Exception ex)
             {
@@ -53,7 +67,7 @@ namespace AppAcmafer.Vista
         {
             try
             {
-                List<AsignacionTarea> asignaciones = (List<AsignacionTarea>)ViewState["Asignaciones"];
+                List<AsignacionTarea> asignaciones = TodasLasAsignaciones;
                 string filtroEmpleado = txtFiltroEmpleado.Text.ToLower().Trim();
 
                 var asignacionesFiltradas = asignaciones;
@@ -97,7 +111,7 @@ namespace AppAcmafer.Vista
             Button btn = (Button)sender;
             int idAsignacion = Convert.ToInt32(btn.CommandArgument);
 
-            List<AsignacionTarea> asignaciones = (List<AsignacionTarea>)ViewState["Asignaciones"];
+            List<AsignacionTarea> asignaciones = TodasLasAsignaciones;
             AsignacionTarea asignacion = asignaciones.FirstOrDefault(a => a.IdAsignacionTarea == idAsignacion);
 
             if (asignacion != null)
@@ -125,11 +139,11 @@ namespace AppAcmafer.Vista
         protected string EvaluarEstado(DateTime fechaFin)
         {
             if (fechaFin < DateTime.Now)
-                return "⏰ Vencida";
+                return " Vencida";
             else if (fechaFin.Date == DateTime.Now.Date)
-                return "🔥 Urgente";
+                return " Urgente";
             else
-                return "✅ En Progreso";
+                return " En Progreso";
         }
 
         private void CalcularEstadisticas(List<AsignacionTarea> asignaciones = null)
@@ -138,7 +152,7 @@ namespace AppAcmafer.Vista
             {
                 if (asignaciones == null)
                 {
-                    asignaciones = (List<AsignacionTarea>)ViewState["Asignaciones"];
+                    asignaciones = TodasLasAsignaciones;
                 }
 
                 if (asignaciones != null && asignaciones.Count > 0)

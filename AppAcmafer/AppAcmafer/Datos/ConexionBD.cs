@@ -9,32 +9,50 @@ namespace AppAcmafer.Datos
 {
     public class ConexionBD
     {
-        private string cadenaConexion;
-
-        public ConexionBD()
-        {
-            cadenaConexion = ConfigurationManager.ConnectionStrings["ProyectoACMAFER"].ConnectionString;
-        }
-
-        public SqlConnection ObtenerConexion()
+        // Método para obtener la conexión
+        public static SqlConnection ObtenerConexion()
         {
             try
             {
-                SqlConnection conexion = new SqlConnection(cadenaConexion);
-                conexion.Open();
+                // Verificar que existe la cadena de conexión
+                if (ConfigurationManager.ConnectionStrings["CadenaConexion"] == null)
+                {
+                    throw new Exception("No se encontró la cadena de conexión 'CadenaConexion' en Web.config");
+                }
+
+                string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
+
+                // Verificar que no esté vacía
+                if (string.IsNullOrEmpty(connectionString))
+                {
+                    throw new Exception("La cadena de conexión 'CadenaConexion' está vacía");
+                }
+
+                // Crear y retornar el objeto SqlConnection
+                SqlConnection conexion = new SqlConnection(connectionString);
                 return conexion;
             }
             catch (Exception ex)
             {
-                throw new Exception("Error al conectar: " + ex.Message);
+                // Log del error para debugging
+                Console.WriteLine("Error al obtener la cadena de conexión: " + ex.Message);
+                throw new Exception("Error al obtener la cadena de conexión: " + ex.Message);
             }
         }
 
-        public void CerrarConexion(SqlConnection conexion)
+        // Método alternativo para cerrar conexión (opcional, pero útil)
+        public static void CerrarConexion(SqlConnection conexion)
         {
-            if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+            try
             {
-                conexion.Close();
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al cerrar conexión: " + ex.Message);
             }
         }
     }

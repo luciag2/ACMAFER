@@ -10,26 +10,33 @@ namespace AppAcmafer.Datos
 {
     public class CompraDAO
     {
-        private ConexionBD conexionBD = new ConexionBD();
-
         public List<Compra> ObtenerTodasLasCompras()
         {
             List<Compra> compras = new List<Compra>();
             SqlConnection conexion = null;
+            SqlDataReader reader = null;
 
             try
             {
-                conexion = conexionBD.ObtenerConexion();
+                // Llamar al método estático directamente (sin instancia)
+                conexion = ConexionBD.ObtenerConexion();
+
+                // Abrir la conexión
+                if (conexion != null)
+                {
+                    conexion.Open();
+                }
+
                 string query = @"SELECT c.idCompra, c.cantidad, c.valorTotal, c.descuento,
-                                c.idProducto, c.idPedido, 
-                                p.nombre as nombreProducto, 
+                                c.idProducto, c.idPedido,
+                                p.nombre as nombreProducto,
                                 pe.numeroPedido
                                 FROM compra c
                                 INNER JOIN producto p ON c.idProducto = p.idProducto
                                 INNER JOIN pedido pe ON c.idPedido = pe.idPedido";
 
                 SqlCommand cmd = new SqlCommand(query, conexion);
-                SqlDataReader reader = cmd.ExecuteReader();
+                reader = cmd.ExecuteReader();
 
                 while (reader.Read())
                 {
@@ -48,7 +55,17 @@ namespace AppAcmafer.Datos
             }
             finally
             {
-                conexionBD.CerrarConexion(conexion);
+                // Cerrar el reader
+                if (reader != null)
+                {
+                    reader.Close();
+                }
+
+                // Cerrar la conexión
+                if (conexion != null && conexion.State == System.Data.ConnectionState.Open)
+                {
+                    conexion.Close();
+                }
             }
 
             return compras;

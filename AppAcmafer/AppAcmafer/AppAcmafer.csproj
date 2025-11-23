@@ -67,6 +67,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Vista\ActualizarProducto.aspx" />
+    <Content Include="Vista\AsignarRol.aspx" />
     <Content Include="Vista\AsignarTareas.aspx" />
     <Content Include="Vista\botstrap\css\bootstrap-grid.css" />
     <Content Include="Vista\botstrap\css\bootstrap-grid.min.css" />
@@ -90,14 +92,27 @@
     <Content Include="Vista\botstrap\js\bootstrap.esm.min.js" />
     <Content Include="Vista\botstrap\js\bootstrap.js" />
     <Content Include="Vista\botstrap\js\bootstrap.min.js" />
+    <Content Include="Vista\CambiarContraseña.aspx" />
     <Content Include="Vista\Compras.aspx" />
+    <Content Include="Vista\CrearPedido.aspx" />
     <Content Include="Vista\ListadoProductos.aspx" />
     <Content Include="Vista\ListarUsuarios.aspx" />
     <Content Include="Vista\Login.aspx" />
+    <Content Include="Vista\MenuRoles.aspx" />
     <Content Include="Vista\Productos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\CategoriaDAO.cs" />
+    <Compile Include="Datos\CD_AsgnacionTarea.cs" />
+    <Compile Include="Datos\CD_Categoria.cs" />
+    <Compile Include="Datos\CD_Compra.cs" />
+    <Compile Include="Datos\CD_Pedido.cs" />
+    <Compile Include="Datos\CD_Producto.cs" />
+    <Compile Include="Datos\CD_Rol.cs" />
+    <Compile Include="Datos\CD_Tarea.cs" />
+    <Compile Include="Datos\CD_Usuario.cs" />
+    <Compile Include="Datos\CD_UsuarioRol.cs" />
     <Compile Include="Datos\ClConexion.cs" />
     <Compile Include="Datos\ClProducto.cs" />
     <Compile Include="Datos\ClProductoD.cs" />
@@ -105,29 +120,64 @@
     <Compile Include="Datos\CompraDAO.cs" />
     <Compile Include="Datos\ConexionBD.cs" />
     <Compile Include="Datos\ProductoDAO.cs" />
+    <Compile Include="Datos\RolDAO.cs" />
     <Compile Include="Datos\TareaDAO.cs" />
+    <Compile Include="Logica\ClCategoria.cs" />
     <Compile Include="Logica\ClUsuarioL.cs" />
+    <Compile Include="Logica\ClUsuarioRol.cs" />
+    <Compile Include="Logica\Cl_Pedido.cs" />
+    <Compile Include="Logica\Cl_Producto.cs" />
+    <Compile Include="Logica\Cl_Rol.cs" />
+    <Compile Include="Logica\Cl_Tarea.cs" />
+    <Compile Include="Logica\Cl_Usuario.cs" />
     <Compile Include="Logica\MenuLogica.cs" />
     <Compile Include="Logica\NavegacionLogica.cs" />
     <Compile Include="Logica\ProductoVent.cs" />
     <Compile Include="Modelo\AsignacionTarea.cs" />
+<<<<<<< HEAD
     <Compile Include="Modelo\CarritoItem.cs" />
+=======
+    <Compile Include="Modelo\Categoria.cs" />
+>>>>>>> origin/main
     <Compile Include="Modelo\ClCategoriaM.cs" />
     <Compile Include="Modelo\ClProductoM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
+    <Compile Include="Modelo\ComentarioTarea.cs" />
     <Compile Include="Modelo\Compra.cs" />
+    <Compile Include="Modelo\EvidenciaTarea.cs" />
     <Compile Include="Modelo\Pedido.cs" />
     <Compile Include="Modelo\Producto.cs" />
     <Compile Include="Modelo\Rol.cs" />
     <Compile Include="Modelo\Tarea.cs" />
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vista\ActualizarProducto.aspx.cs">
+      <DependentUpon>ActualizarProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\ActualizarProducto.aspx.designer.cs">
+      <DependentUpon>ActualizarProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AsignarRol.aspx.cs">
+      <DependentUpon>AsignarRol.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\AsignarRol.aspx.designer.cs">
+      <DependentUpon>AsignarRol.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Vista\AsignarTareas.aspx.cs">
       <DependentUpon>AsignarTareas.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Vista\AsignarTareas.aspx.designer.cs">
       <DependentUpon>AsignarTareas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CambiarContraseña.aspx.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CambiarContraseña.aspx.designer.cs">
+      <DependentUpon>CambiarContraseña.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\ClUsuarioV.cs" />
     <Compile Include="Vista\Compras.aspx.cs">
@@ -136,6 +186,13 @@
     </Compile>
     <Compile Include="Vista\Compras.aspx.designer.cs">
       <DependentUpon>Compras.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\CrearPedido.aspx.cs">
+      <DependentUpon>CrearPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\CrearPedido.aspx.designer.cs">
+      <DependentUpon>CrearPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\ListadoProductos.aspx.cs">
       <DependentUpon>ListadoProductos.aspx</DependentUpon>
@@ -161,6 +218,13 @@
     <Compile Include="Vista\MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuRoles.aspx.cs">
+      <DependentUpon>MenuRoles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Vista\MenuRoles.aspx.designer.cs">
+      <DependentUpon>MenuRoles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Vista\Productos.aspx.cs">
       <DependentUpon>Productos.aspx</DependentUpon>
