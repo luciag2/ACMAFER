@@ -73,7 +73,7 @@ namespace AppAcmafer.Vista
                 }
                 else
                 {
-                    var productosFiltrados = productos.Where(p => p.idCategoria == idCategoria).ToList();
+                    var productosFiltrados = productos.Where(p => p.IdCategoria == idCategoria).ToList();
                     gvProductos.DataSource = productosFiltrados;
                 }
 
@@ -194,7 +194,7 @@ namespace AppAcmafer.Vista
                 if (productos != null && productos.Count > 0)
                 {
                     lblTotalProductos.Text = productos.Count.ToString();
-                    lblTotalCategorias.Text = productos.Select(p => p.idCategoria).Distinct().Count().ToString();
+                    lblTotalCategorias.Text = productos.Select(p => p.IdCategoria).Distinct().Count().ToString();
                     lblStockTotal.Text = productos.Sum(p => p.StockActual).ToString("N0");
                     lblValorTotal.Text = productos.Sum(p => p.PrecioUnitario * p.StockActual).ToString("N0");
                 }

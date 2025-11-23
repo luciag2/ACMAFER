@@ -21,7 +21,6 @@
             </div>
             
             <div style="margin-top: 15px;">
-                <asp:Button ID="btnConfirmarCompra" runat="server" Text="Confirmar Compra" OnClick="btnConfirmarCompra_Click" CssClass="btn btn-success" />
                 
                 <asp:Label ID="lblMensajeCompra" runat="server" ForeColor="Red" style="display: block; margin-top: 10px;"></asp:Label>
             </div>

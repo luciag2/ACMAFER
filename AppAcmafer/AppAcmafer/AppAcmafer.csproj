@@ -111,6 +111,7 @@
     <Compile Include="Logica\NavegacionLogica.cs" />
     <Compile Include="Logica\ProductoVent.cs" />
     <Compile Include="Modelo\AsignacionTarea.cs" />
+    <Compile Include="Modelo\CarritoItem.cs" />
     <Compile Include="Modelo\ClCategoriaM.cs" />
     <Compile Include="Modelo\ClProductoM.cs" />
     <Compile Include="Modelo\ClUsuarioM.cs" />
@@ -202,7 +203,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vista\Imagenes\" />
+    <Folder Include="Vista\imagenes\productos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

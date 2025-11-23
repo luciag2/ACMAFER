@@ -40,7 +40,7 @@ namespace AppAcmafer.Datos
                         StockActual = Convert.ToInt32(reader["stockActual"]),
                         Estado = reader["estado"].ToString(),
                         PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"]),
-                        idCategoria = Convert.ToInt32(reader["idCategoria"]),
+                        IdCategoria = Convert.ToInt32(reader["idCategoria"]),
                         NombreCategoria = reader["nombreCategoria"].ToString()
                     });
                 }
@@ -92,7 +92,7 @@ namespace AppAcmafer.Datos
                             Descripcion = reader["descripcion"].ToString(),
                             Codigo = reader["codigo"].ToString(),
                             Estado = reader["estado"].ToString(),
-                            idCategoria = reader.GetInt32(reader.GetOrdinal("idCategoria")),
+                            IdCategoria = reader.GetInt32(reader.GetOrdinal("idCategoria")),
                             StockActual = Convert.ToInt32(reader["stockActual"]),
                             PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"])
                         };

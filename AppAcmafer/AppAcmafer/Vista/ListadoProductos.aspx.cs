@@ -1,4 +1,5 @@
 ﻿using AppAcmafer.Datos;
+using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +14,8 @@ namespace AppAcmafer.Vista
 {
     public partial class ListadoProductos : System.Web.UI.Page
     {
-         ClConexion Conexion;
+        CompraDAO dao = new CompraDAO();
+        ClConexion Conexion;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -154,38 +156,57 @@ namespace AppAcmafer.Vista
             }
         }
 
-        protected void rptProductos_ItemCommand(object source, RepeaterCommandEventArgs e)
+        protected void RptProductos_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            if (e.CommandName == "Comprar")
+            if (e.CommandName == "ComprarProducto")
             {
-                if (int.TryParse(e.CommandArgument.ToString(), out int idProductoSeleccionado))
+                int idProducto = Convert.ToInt32(e.CommandArgument);
+
+                Producto productoSeleccionado = new Producto();
+                productoSeleccionado.Nombre = "Producto de Prueba " + idProducto.ToString();
+                productoSeleccionado.PrecioUnitario = 100.50m;
+
                 {
-                    try
-                    {
-                        Response.Redirect($"Compras.aspx?idProducto={idProductoSeleccionado}");
-                    }
-                    catch (Exception ex)
-                    {
-                        lblMensaje.Text = "Error al iniciar el proceso de compra: " + ex.Message;
-                    }
-                }
-                else
-                {
-                    lblMensaje.Text = "Error: No se pudo identificar el producto seleccionado.";
+                    lblModalProductoNombre.Text = productoSeleccionado.Nombre;
+                    lblModalPrecio.Text = productoSeleccionado.PrecioUnitario.ToString("C");
+                    ViewState["CurrentProductID"] = idProducto;
+
+                    string script = "$('#ModalCompra').modal('show');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ShowModal", script, true);
                 }
             }
         }
 
-
-
-        protected void btnComprar_Click(object sender, CommandEventArgs e)
+        protected void btnAgregarItem_Click(object sender, EventArgs e)
         {
-            string idProducto = e.CommandArgument.ToString();
+            if (ViewState["CurrentProductID"] != null && int.TryParse(txtCantidad.Text, out int cantidad) && cantidad > 0)
+            {
+                int idProducto = Convert.ToInt32(ViewState["CurrentProductID"]);
 
-            lblMensaje.ForeColor = System.Drawing.Color.Green;
-            lblMensaje.Text = $"Producto #{idProducto} agregado al carrito. Redirigiendo a Compras...";
+                Producto productoInfo = dao.ObtenerProductoPorId(idProducto);
 
-            Response.Redirect($"Compras.aspx?idProducto={idProducto}", true);
+                if (productoInfo != null)
+                {
+                    List<CarritoItem> carrito = (Session["Carrito"] as List<CarritoItem>) ?? new List<CarritoItem>();
+
+                    carrito.Add(new CarritoItem
+                    {
+                        IdProducto = idProducto,
+                        NombreProducto = productoInfo.Nombre,
+                        Cantidad = cantidad,
+                        PrecioUnitario = productoInfo.PrecioUnitario,
+                        Subtotal = cantidad * productoInfo.PrecioUnitario
+                    });
+
+                    Session["Carrito"] = carrito;
+
+                    string script = "$('#ModalCompra').modal('hide'); alert('Producto agregado: " + productoInfo.Nombre + " x" + cantidad + "');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "HideModal", script, true);
+
+                    txtCantidad.Text = "1";
+                    ViewState["CurrentProductID"] = null;
+                }
+            }
         }
     }
 }

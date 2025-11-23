@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <asp:Repeater ID="rptProductos" runat="server" OnItemCommand="rptProductos_ItemCommand">
+            <asp:Repeater ID="rptProductos" runat="server" OnItemCommand="RptProductos_ItemCommand">
                 <HeaderTemplate>
                     <table class="table table-striped table-hover table-bordered">
                         <thead class="thead-dark">
@@ -37,13 +37,22 @@
                                 <th>Categoría</th>
                                 <th>Precio Unitario</th>
                                 <th>Stock Actual</th>
+                                <td>
+                                    <asp:LinkButton
+                                        ID="btnComprar"
+                                        runat="server"
+                                        CssClass="btn btn-sm btn-primary"
+                                        Text="Comprar"
+                                        CommandName="ComprarProducto"
+                                        CommandArgument='<%# Eval("IdProducto") %>' />
+                                </td>
                             </tr>
                         </thead>
                         <tbody>
                 </HeaderTemplate>
                 <ItemTemplate>
                     <tr>
-                        <td><%# Eval("idProducto") %></td>
+                        <td><%# Eval("IdProducto") %></td>
                         <td><%# Eval("nombre") %></td>
                         <td><%# Eval("CategoriaNombre") %></td>
                         <td><%# Eval("precioUnitario", "{0:N2}") %></td>
@@ -56,7 +65,7 @@
                                 CssClass="btn btn-sm btn-primary"
                                 Text="Comprar"
                                 CommandName="Comprar"
-                                CommandArgument='<%# Eval("idProducto") %>' />
+                                CommandArgument='<%# Eval("IdProducto") %>' />
                         </td>
                     </tr>
                 </ItemTemplate>
@@ -73,6 +82,39 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <asp:UpdatePanel ID="upModal" runat="server">
+            <ContentTemplate>
+                <div class="modal fade" id="ModalCompra" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">🛒 Agregar al Carrito:
+                                    <asp:Label ID="lblModalProductoNombre" runat="server" /></h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label>Precio Unitario:</label>
+                                    <asp:Label ID="lblModalPrecio" runat="server" CssClass="form-control-plaintext" />
+                                </div>
+                                <div class="form-group">
+                                    <label>Cantidad Requerida:</label>
+                                    <asp:TextBox ID="txtCantidad" runat="server" CssClass="form-control" TextMode="Number" Text="1" min="1" />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="txtCantidad" ErrorMessage="Cantidad obligatoria." ForeColor="Red" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <asp:Button ID="btnAgregarItem" runat="server" Text="Añadir al Carrito"
+                                    CssClass="btn btn-success" OnClick="btnAgregarItem_Click" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ContentTemplate>
+        </asp:UpdatePanel>
+        º
     </form>
 </body>
 </html>

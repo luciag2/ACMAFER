@@ -1,298 +1,59 @@
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\gonsa\ACMAFER-Grupo-3\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
-C:\Users\Yesid\Desktop\AppAcmafer\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
-C:\Users\HP\Desktop\git Proyecto\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
-<<<<<<< HEAD
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\PC_08\Desktop\ReposACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
-=======
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
-C:\Users\HP\Desktop\ACMAFER\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb
->>>>>>> origin/main
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll.config
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\AppAcmafer.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\AppAcmafer.pdb
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csc.exe.config
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csc.rsp
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csi.exe.config
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\csi.rsp
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.AppContext.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Console.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Http.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Net.Sockets.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.ValueTuple.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\vbc.exe.config
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\vbc.rsp
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.AssemblyReference.cache
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.CoreCompileInputs.cache
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.csproj.Up2Date
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.dll
+C:\Users\ashley\Desktop\git\AppAcmafer\AppAcmafer\obj\Debug\AppAcmafer.pdb

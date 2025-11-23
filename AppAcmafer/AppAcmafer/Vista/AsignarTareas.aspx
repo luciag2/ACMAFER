@@ -18,7 +18,7 @@
                     <asp:Label ID="lblFiltroEmpleado" runat="server" Text="Empleado:" Font-Bold="true"></asp:Label>
                     <asp:TextBox ID="txtFiltroEmpleado" runat="server" placeholder="Nombre empleado..." 
                         style="padding: 8px; width: 200px; border: 1px solid #bdc3c7; border-radius: 5px; margin-left: 5px;"></asp:TextBox>
-                </div>
+
                 
                 <div>
                     <asp:Label ID="lblFiltroFecha" runat="server" Text="Fecha:" Font-Bold="true"></asp:Label>

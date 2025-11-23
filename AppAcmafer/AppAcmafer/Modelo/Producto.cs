@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 
 namespace AppAcmafer.Modelo
 {
@@ -15,8 +16,8 @@ namespace AppAcmafer.Modelo
         public int StockActual { get; set; }
         public string Estado { get; set; }
         public decimal PrecioUnitario { get; set; }
-        public int idCategoria { get; set; }
-
+        public int IdCategoria { get; set; }
+        public string Imagen { get; set; }
         // Propiedad adicional
         public string NombreCategoria { get; set; }
     }
