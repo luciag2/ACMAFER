@@ -121,7 +121,7 @@
                                    CommandArgument='<%# Eval("IdProducto") %>' 
                                    style="padding: 4px 10px; background: #1f2937; color: white; border: none; border-radius: 5px; cursor: pointer; margin-right: 5px; font-weight: bold;" />
                         
-                           <asp:Button ID="btnAgregar" runat="server" 
+                           <asp:Button ID="btnComprar" runat="server" 
                                    Text="🛒 Comprar" 
                                    CommandName="Comprar"
                                    CommandArgument='<%# Eval("IdProducto") %>' 

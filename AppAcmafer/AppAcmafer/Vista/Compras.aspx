@@ -5,6 +5,31 @@
         <h2 style="color: #2c3e50; margin-bottom: 20px; border-bottom: 3px solid #3498db; padding-bottom: 10px;">
             🛒 Historial de Compras
         </h2>
+
+        <div id="PanelFormularioCompra" runat="server" visible="false" class="card" style="margin-bottom: 20px; padding: 20px; background-color: #f8f9fa; border: 1px solid #ddd;">
+    <h3>🛒 Detalle de Producto para Compra</h3>
+    <hr />
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Producto:</strong> <asp:Label ID="lblNombreProducto" runat="server"></asp:Label></p>
+            <p><strong>Precio Unitario:</strong> <asp:Label ID="lblPrecioUnitario" runat="server"></asp:Label></p>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="txtCantidad">Cantidad a Comprar:</label>
+                <asp:TextBox ID="txtCantidad" runat="server" Text="1" CssClass="form-control" TextMode="Number"></asp:TextBox>
+            </div>
+            
+            <div style="margin-top: 15px;">
+                
+                <asp:Label ID="lblMensajeCompra" runat="server" ForeColor="Red" style="display: block; margin-top: 10px;"></asp:Label>
+            </div>
+        </div>
+    </div>
+    
+    <asp:HiddenField ID="hfIdProducto" runat="server" />
+    <asp:HiddenField ID="hfPrecioOriginal" runat="server" />
+</div>
         
         <!-- Filtros -->
         <div style="margin-bottom: 20px; padding: 15px; background: #ecf0f1; border-radius: 5px;">

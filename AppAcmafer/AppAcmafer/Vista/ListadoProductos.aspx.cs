@@ -1,4 +1,5 @@
 ﻿using AppAcmafer.Datos;
+using AppAcmafer.Modelo;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -13,7 +14,8 @@ namespace AppAcmafer.Vista
 {
     public partial class ListadoProductos : System.Web.UI.Page
     {
-         ClConexion Conexion;
+        CompraDAO dao = new CompraDAO();
+        ClConexion Conexion;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,6 +25,7 @@ namespace AppAcmafer.Vista
 
             if (!IsPostBack)
             {
+                CargarProductosEnVenta();
                 CargarCategorias();
                 CargarProductos(0); // 0 = Mostrar Todos
             }
@@ -62,14 +65,13 @@ namespace AppAcmafer.Vista
             // 3. Quitamos las referencias a T1 que no existen.
 
             string consultaSQL = $@"
-            SELECT 
-                p.idProducto, 
-                p.Nombre AS nombre, 
-                c.Nombre AS CategoriaNombre, 
-                p.PrecioUnitario AS precioUnitario, 
-                p.StockActual AS stockActual 
-            FROM dbo.producto p
-            INNER JOIN dbo.categoria c ON p.idCategoria = c.idCategoria
+            SELECT
+                    p.idProducto, p.nombre, c.nombre AS CategoriaNombre, 
+                    p.precioUnitario, p.stockActual
+                FROM 
+                    dbo.producto p
+                INNER JOIN 
+                    dbo.categoria c ON p.idCategoria = c.idCategoria"";
             "; // No se usa WHERE ni ORDER BY aún.
 
             if (idCategoriaSeleccionada > 0)
@@ -112,6 +114,99 @@ namespace AppAcmafer.Vista
         {
             int idSeleccionado = Convert.ToInt32(ddlCategoria.SelectedValue);
             CargarProductos(idSeleccionado);
+        }
+
+        // --- NUEVA FUNCIÓN PARA OBTENER SOLO PRODUCTOS EN VENTA ---
+        public void CargarProductosEnVenta()
+        {
+            ClConexion miConexion = new ClConexion();
+
+            string consultaSQL = @"
+        SELECT
+            p.idProducto, p.nombre, c.nombre AS Categoria, p.precioUnitario, p.stockActual
+        FROM 
+            dbo.producto p
+        INNER JOIN 
+            dbo.categoria c ON p.idCategoria = c.idCategoria
+        WHERE 
+            p.estado = 'Disponible'
+            AND CAST(p.stockActual AS INT) > 0
+        ORDER BY 
+            p.nombre;";
+
+            try
+            {
+                System.Data.DataTable tablaProductosEnVenta = miConexion.ObtenerTabla(consultaSQL);
+
+                rptProductos.DataSource = tablaProductosEnVenta;
+                rptProductos.DataBind();
+
+                if (tablaProductosEnVenta.Rows.Count == 0)
+                {
+                    lblMensaje.Text = "No se encontraron productos disponibles para la venta.";
+                }
+                else
+                {
+                    lblMensaje.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblMensaje.Text = "Error al cargar productos en venta: " + ex.Message;
+            }
+        }
+
+        protected void RptProductos_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "ComprarProducto")
+            {
+                int idProducto = Convert.ToInt32(e.CommandArgument);
+
+                Producto productoSeleccionado = new Producto();
+                productoSeleccionado.Nombre = "Producto de Prueba " + idProducto.ToString();
+                productoSeleccionado.PrecioUnitario = 100.50m;
+
+                {
+                    lblModalProductoNombre.Text = productoSeleccionado.Nombre;
+                    lblModalPrecio.Text = productoSeleccionado.PrecioUnitario.ToString("C");
+                    ViewState["CurrentProductID"] = idProducto;
+
+                    string script = "$('#ModalCompra').modal('show');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ShowModal", script, true);
+                }
+            }
+        }
+
+        protected void btnAgregarItem_Click(object sender, EventArgs e)
+        {
+            if (ViewState["CurrentProductID"] != null && int.TryParse(txtCantidad.Text, out int cantidad) && cantidad > 0)
+            {
+                int idProducto = Convert.ToInt32(ViewState["CurrentProductID"]);
+
+                Producto productoInfo = dao.ObtenerProductoPorId(idProducto);
+
+                if (productoInfo != null)
+                {
+                    List<CarritoItem> carrito = (Session["Carrito"] as List<CarritoItem>) ?? new List<CarritoItem>();
+
+                    carrito.Add(new CarritoItem
+                    {
+                        IdProducto = idProducto,
+                        NombreProducto = productoInfo.Nombre,
+                        Cantidad = cantidad,
+                        PrecioUnitario = productoInfo.PrecioUnitario,
+                        Subtotal = cantidad * productoInfo.PrecioUnitario
+                    });
+
+                    Session["Carrito"] = carrito;
+
+                    string script = "$('#ModalCompra').modal('hide'); alert('Producto agregado: " + productoInfo.Nombre + " x" + cantidad + "');";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "HideModal", script, true);
+
+                    txtCantidad.Text = "1";
+                    ViewState["CurrentProductID"] = null;
+                }
+            }
         }
     }
 }

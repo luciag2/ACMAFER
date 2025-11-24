@@ -130,9 +130,11 @@
     <Compile Include="Logica\Cl_Rol.cs" />
     <Compile Include="Logica\Cl_Tarea.cs" />
     <Compile Include="Logica\Cl_Usuario.cs" />
+    <Compile Include="Logica\Emailervice.cs" />
     <Compile Include="Logica\MenuLogica.cs" />
     <Compile Include="Logica\NavegacionLogica.cs" />
     <Compile Include="Modelo\AsignacionTarea.cs" />
+    <Compile Include="Modelo\CarritoItem.cs" />
     <Compile Include="Modelo\Categoria.cs" />
     <Compile Include="Modelo\ClCategoriaM.cs" />
     <Compile Include="Modelo\ClProductoM.cs" />
@@ -262,7 +264,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vista\Imagenes\" />
+    <Folder Include="Vista\imagenes\productos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

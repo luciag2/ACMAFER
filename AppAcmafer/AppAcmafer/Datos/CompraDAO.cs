@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -68,6 +69,36 @@ namespace AppAcmafer.Datos
             }
 
             return compras;
+        }
+
+        public Producto ObtenerProductoPorId (int id)
+        {
+            Producto producto = null;
+            string connectionString = ConfigurationManager.ConnectionStrings["ClConexion"].ConnectionString;
+
+            string query = "select idProducto, nombre, precioUnitario from producto where idProducto = @id";
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@id", id);
+                    con.Open();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            producto = new Producto
+                            {
+                                IdProducto = (int)reader["idProducto"],
+                                Nombre = reader["nombre"].ToString(),
+                                PrecioUnitario = Convert.ToDecimal(reader["precioUnitario"])
+                            };
+                        }
+                    }
+                }
+            }
+            return producto;
         }
     }
 }

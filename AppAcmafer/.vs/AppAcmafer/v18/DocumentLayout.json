@@ -1,0 +1,200 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\ashley\\desktop\\git\\appacmafer\\appacmafer\\vista\\cambiarcontrase\u00F1a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\cambiarcontrase\u00F1a.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|c:\\users\\ashley\\desktop\\git\\appacmafer\\appacmafer\\vista\\asignarrol.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\asignarrol.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\ListadoProductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Vista\\ListadoProductos.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\appacmafer\\datos\\cd_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\datos\\cd_pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\appacmafer\\logica\\emailervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\logica\\emailervice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\Producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Modelo\\Producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\appacmafer\\vista\\listadoproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:appacmafer\\vista\\listadoproductos.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\AsignarTareas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Vista\\AsignarTareas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\CarritoItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Modelo\\CarritoItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\CompraDAO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Datos\\CompraDAO.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\ClConexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7EAD2D71-35BD-4A7B-A31C-5C5089F907E3}|AppAcmafer\\AppAcmafer.csproj|solutionrelative:AppAcmafer\\Datos\\ClConexion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CambiarContrase\u00F1a.aspx",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\CambiarContrase\u00F1a.aspx",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\CambiarContrase\u00F1a.aspx",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\CambiarContrase\u00F1a.aspx",
+              "RelativeToolTip": "AppAcmafer\\Vista\\CambiarContrase\u00F1a.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-24T11:19:45.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AsignarRol.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\AsignarRol.aspx.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\AsignarRol.aspx.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\AsignarRol.aspx.cs",
+              "RelativeToolTip": "AppAcmafer\\Vista\\AsignarRol.aspx.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAewFUAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T11:15:09.989Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CD_Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\CD_Pedido.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\CD_Pedido.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\CD_Pedido.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\CD_Pedido.cs",
+              "ViewState": "AgIAAO4AAAAAAAAAAAAwwAYBAABUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:44:21.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Emailervice.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Logica\\Emailervice.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Logica\\Emailervice.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Logica\\Emailervice.cs",
+              "RelativeToolTip": "AppAcmafer\\Logica\\Emailervice.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowBMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-24T04:42:41.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CompraDAO.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\CompraDAO.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\CompraDAO.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\CompraDAO.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\CompraDAO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwEgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:26:36.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AsignarTareas.aspx",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\AsignarTareas.aspx",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\AsignarTareas.aspx",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\AsignarTareas.aspx",
+              "RelativeToolTip": "AppAcmafer\\Vista\\AsignarTareas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T20:29:37.695Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\Producto.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Modelo\\Producto.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\Producto.cs",
+              "RelativeToolTip": "AppAcmafer\\Modelo\\Producto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T15:57:50.848Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CarritoItem.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\CarritoItem.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Modelo\\CarritoItem.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Modelo\\CarritoItem.cs",
+              "RelativeToolTip": "AppAcmafer\\Modelo\\CarritoItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-23T14:21:15.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListadoProductos.aspx",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\ListadoProductos.aspx",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\ListadoProductos.aspx",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\ListadoProductos.aspx",
+              "RelativeToolTip": "AppAcmafer\\Vista\\ListadoProductos.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2025-11-23T15:32:55.989Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ListadoProductos.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\ListadoProductos.aspx.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Vista\\ListadoProductos.aspx.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Vista\\ListadoProductos.aspx.cs",
+              "RelativeToolTip": "AppAcmafer\\Vista\\ListadoProductos.aspx.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAgwLIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:46:15.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ClConexion.cs",
+              "DocumentMoniker": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\ClConexion.cs",
+              "RelativeDocumentMoniker": "AppAcmafer\\Datos\\ClConexion.cs",
+              "ToolTip": "C:\\Users\\ashley\\Desktop\\git\\AppAcmafer\\AppAcmafer\\Datos\\ClConexion.cs",
+              "RelativeToolTip": "AppAcmafer\\Datos\\ClConexion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T22:46:15.368Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

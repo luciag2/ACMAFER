@@ -5,6 +5,7 @@ using System.Web;
 
 namespace AppAcmafer.Modelo
 {
+    [Serializable]
     public class Categoria
     {
         public int IdCategoria { get; set; }
