@@ -1,0 +1,2 @@
+C:\Users\Yesid\Desktop\aCMafer12\aCMafer12\obj\Debug\aCMafer12.csproj.AssemblyReference.cache
+C:\Users\Yesid\Desktop\aCMafer12\aCMafer12\obj\Debug\aCMafer12.csproj.CoreCompileInputs.cache

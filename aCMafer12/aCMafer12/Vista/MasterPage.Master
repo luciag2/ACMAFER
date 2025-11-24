@@ -1,0 +1,218 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="AppAcmafer.Vista.MasterPage" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>AppAcmafer - Sistema de Gestión</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #24303c;
+        }
+        
+        .header { 
+             background: linear-gradient(135deg, #663300 0%, #cc6600 20%, #ff9933 45%, #ffb366 60%, #cc6600 80%, #662200 100%);
+             color: white;
+             padding: 20px 40px;
+             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header h1 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+        
+        .menu-principal {
+            background-color: #4b4a4b;
+            padding: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .menu-principal ul {
+            list-style: none;
+            display: flex;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .menu-principal li {
+            display: flex;
+        }
+        
+        .menu-principal a {
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .menu-principal a:hover {
+            background-color: #000000;
+            border-bottom: 3px solid #3498db;
+        }
+
+        .menu-principal button {
+            background: none;
+            border: none;
+            color: white;
+            text-decoration: none;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .menu-principal button:hover {
+            background-color: #000000;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .contenido {
+            padding: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            min-height: calc(100vh - 250px);
+        }
+        
+        .footer {
+            background-color: #000000;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <h1>🏢 ACMAFER - Sistema de Gestión de Fundición</h1>
+        </div>
+
+        <nav class="menu-principal">
+            <ul>
+                <!-- Menú para ADMINISTRADOR (rol 1) -->
+                <% if (Session["rol"] != null && Convert.ToInt32(Session["rol"]) == 1) { %>
+                    <li>
+                        <asp:HyperLink ID="lnkProductos" runat="server" NavigateUrl="~/Vista/Productos.aspx">
+                            📦 Productos
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="lnkCompras" runat="server" NavigateUrl="~/Vista/Compras.aspx">
+                            🛒 Compras
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="lnkTareas" runat="server" NavigateUrl="~/Vista/AsignarTareas.aspx">
+                            📋 Asignación de Tareas
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="lnkUsuarios" runat="server" NavigateUrl="~/Vista/ListarUsuarios.aspx">
+                            👥 Usuarios
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink ID="lnkAdmin" runat="server" NavigateUrl="~/Vista/OpAdmin.aspx">
+                            ⚙️ Panel Admin
+                        </asp:HyperLink>
+                    </li>
+                <% } %>
+
+                <!-- Menú para EMPLEADO (rol 2) -->
+                <% if (Session["rol"] != null && Convert.ToInt32(Session["rol"]) == 2) { %>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/Productos.aspx">
+                            📦 Productos
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/ListadoProductos.aspx">
+                            📋 Listado
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/OpEmple.aspx">
+                            🏠 Mi Panel
+                        </asp:HyperLink>
+                    </li>
+                <% } %>
+
+                <!-- Menú para CLIENTE (rol 3) -->
+                <% if (Session["rol"] != null && Convert.ToInt32(Session["rol"]) == 3) { %>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/Productos.aspx">
+                            📦 Catálogo
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/OpCliente.aspx">
+                            🏠 Mi Panel
+                        </asp:HyperLink>
+                    </li>
+                <% } %>
+
+                <!-- Menú para SUPERVISOR (rol 4) -->
+                <% if (Session["rol"] != null && Convert.ToInt32(Session["rol"]) == 4) { %>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/Productos.aspx">
+                            📦 Productos
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/Compras.aspx">
+                            🛒 Compras
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/AsignarTareas.aspx">
+                            📋 Asignación de Tareas
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/ListarUsuarios.aspx">
+                            👥 Usuarios
+                        </asp:HyperLink>
+                    </li>
+                    <li>
+                        <asp:HyperLink runat="server" NavigateUrl="~/Vista/OpSupervisor.aspx">
+                            🏠 Mi Panel
+                        </asp:HyperLink>
+                    </li>
+                <% } %>
+
+                <!-- Link común para todos: Cerrar sesión -->
+                <li>
+                    <asp:LinkButton ID="btnCerrarSesion" runat="server" OnClick="CerrarSesion_Click">
+                        🚪 Cerrar Sesión
+                    </asp:LinkButton>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="contenido">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 ACMAFER - Sistema de Gestión de Fundición. Todos los derechos reservados.</p>
+        </div>
+    </form>
+</body>
+</html>
