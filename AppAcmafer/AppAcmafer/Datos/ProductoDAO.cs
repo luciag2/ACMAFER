@@ -75,7 +75,7 @@ namespace AppAcmafer.Datos
             return productos;
         }
 
-<<<<<<< HEAD
+
         public Producto ObtenerProductoPorId(int idProducto)
         {
             Producto producto = null;
@@ -142,10 +142,6 @@ namespace AppAcmafer.Datos
             }
 
             return producto;
-        }
-=======
-
->>>>>>> a3f6c49d14a1d84841131c5446f1419427123e1f
     }
 
     public class ProductoDAL
@@ -203,4 +199,5 @@ namespace AppAcmafer.Datos
             return listaProductos;
         }
     }
+}
 }

@@ -28,11 +28,9 @@ namespace AppAcmafer.Vista
         private void CargarClientes()
         {
             DataTable dt = usuarioLogica.ObtenerUsuarios();
-            // Filtrar solo clientes (rol = 3 según tu BD)
-            DataView dv = dt.DefaultView;
-            dv.RowFilter = "rol = 'Cliente'";
 
-            ddlClientes.DataSource = dv;
+            // Sin filtro - mostrará TODOS los usuarios
+            ddlClientes.DataSource = dt;
             ddlClientes.DataTextField = "nombre";
             ddlClientes.DataValueField = "idUsuario";
             ddlClientes.DataBind();

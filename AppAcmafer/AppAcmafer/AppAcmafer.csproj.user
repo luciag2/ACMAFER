@@ -14,14 +14,9 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-<<<<<<< HEAD
           <StartPageUrl>
           </StartPageUrl>
           <StartAction>CurrentPage</StartAction>
-=======
-          <StartPageUrl>Vista/ActualizarProducto.aspx</StartPageUrl>
-          <StartAction>SpecificPage</StartAction>
->>>>>>> origin/main
           <AspNetDebugging>True</AspNetDebugging>
           <SilverlightDebugging>False</SilverlightDebugging>
           <NativeDebugging>False</NativeDebugging>

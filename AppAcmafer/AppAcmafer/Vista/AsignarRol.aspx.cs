@@ -75,7 +75,7 @@ namespace AppAcmafer.Vista
         {
             try
             {
-                string connectionString = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+                string connectionString = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
                 string query = @"SELECT r.rol AS nombreRol, r.idRol 
                          FROM dbo.usuarioRol ur
                          INNER JOIN dbo.rol r ON ur.idRol = r.idRol

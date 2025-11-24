@@ -20,7 +20,6 @@ namespace AppAcmafer.Modelo
         public DateTime FechaCreacion { get; set; }
         public decimal PrecioUnitario { get; set; }
         public int IdCategoria { get; set; }
-        public string Imagen { get; set; }
         // Propiedad adicional
         public string NombreCategoria { get; set; }
 

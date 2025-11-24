@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using AppAcmafer.Logica;
 
 namespace AppAcmafer.Datos
 {
@@ -139,7 +140,7 @@ namespace AppAcmafer.Datos
                                int idProducto, int cantidad, out string mensaje)
         {
             mensaje = "";
-            string conexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string conexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(conexion))
             {
@@ -202,6 +203,47 @@ namespace AppAcmafer.Datos
                     cmdActualizarStock.ExecuteNonQuery();
 
                     transaction.Commit();
+                    // Después de transaction.Commit();
+                    try
+                    {
+                        string queryCliente = @"SELECT nombre, apellido, email 
+                            FROM usuario WHERE idUsuario = @idCliente";
+                        SqlCommand cmdCliente = new SqlCommand(queryCliente, conn);
+                        cmdCliente.Parameters.AddWithValue("@idCliente", idCliente);
+
+                        using (SqlDataReader dr = cmdCliente.ExecuteReader())
+                        {
+                            if (dr.Read() && !string.IsNullOrEmpty(dr["email"].ToString()))
+                            {
+                                string emailCliente = dr["email"].ToString();
+                                string nombreCliente = dr["nombre"].ToString() + " " + dr["apellido"].ToString();
+
+                                System.Diagnostics.Debug.WriteLine("=== INTENTANDO ENVIAR EMAIL ===");
+                                System.Diagnostics.Debug.WriteLine("Destinatario: " + emailCliente);
+                                System.Diagnostics.Debug.WriteLine("Nombre: " + nombreCliente);
+
+                                var emailService = new EmailService();
+                                bool emailEnviado = emailService.EnviarCorreoPedidoCompletado(
+                                    numeroPedido,
+                                    emailCliente,
+                                    nombreCliente,
+                                    cantidad,
+                                    stockActual - cantidad
+                                );
+
+                                System.Diagnostics.Debug.WriteLine("Email enviado: " + emailEnviado);
+                            }
+                            else
+                            {
+                                System.Diagnostics.Debug.WriteLine("ERROR: Cliente sin email");
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Diagnostics.Debug.WriteLine("ERROR AL ENVIAR EMAIL: " + ex.Message);
+                        System.Diagnostics.Debug.WriteLine("Stack: " + ex.StackTrace);
+                    }
                     mensaje = $"✅ Pedido creado exitosamente. Nuevo stock: {stockActual - cantidad}";
                     return true;
                 }
@@ -218,7 +260,7 @@ namespace AppAcmafer.Datos
         public DataTable ListarPedidos()
         {
             DataTable dt = new DataTable();
-            string conexion = ConfigurationManager.ConnectionStrings["conexion"].ConnectionString;
+            string conexion = ConfigurationManager.ConnectionStrings["CadenaConexion"].ConnectionString;
             using (SqlConnection conn = new SqlConnection(conexion))
             {
                 string query = @"SELECT p.idPedido, p.numeroPedido, p.fechaPedido, p.estado,
